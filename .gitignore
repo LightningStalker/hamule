@@ -50,5 +50,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-tanklc
 clod
+elcut
+seriesw
+tankfreq
+tanklc
+valfind
