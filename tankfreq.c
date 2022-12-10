@@ -9,7 +9,7 @@ int main (int argc, char **argv)
 {
     if (argc == 3)
     {
-        printf ("%f\n", 1 / (3.14159265358979324 * 2 * sqrt (atof(argv[1]) /
+        printf ("%f\n", 1 / (2 * M_PI * sqrt (atof(argv[1]) /
             1000000 * atof(argv[2]) / 1000000)));
         return (0);
     }
