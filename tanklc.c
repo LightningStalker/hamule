@@ -4,12 +4,16 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 int main (int argc, char **argv)
 {
+    unsetenv ("LC_ALL");
+    setlocale (LC_NUMERIC, "");  // This should give us digit grouping
+
     if (argc == 3)
     {
-        printf ("%f\n", pow(1 / atof(argv[1]) / 6.28318530717958648, 2) /
+        printf ("%'.9f\n", pow(1 / atof(argv[1]) / 6.28318530717958648, 2) /
                 atof(argv[2]) * pow(10,6));
         return (0);
     }

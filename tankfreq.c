@@ -4,12 +4,16 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 int main (int argc, char **argv)
 {
+    unsetenv ("LC_ALL");
+    setlocale (LC_NUMERIC, "");  // This should give us digit grouping
+
     if (argc == 3)
     {
-        printf ("%f\n", 1 / (2 * M_PI * sqrt (atof(argv[1]) /
+        printf ("%'.3f\n", 1 / (2 * M_PI * sqrt (atof(argv[1]) /
             1000000 * atof(argv[2]) / 1000000)));
         return (0);
     }
@@ -19,7 +23,7 @@ int main (int argc, char **argv)
         puts ("output is frequency in Hz\n");
         puts ("Usage: tankfreq microfarads microhenries");
         puts ("Example: tankfreq 3.3 .86207");
-        puts ("Output should be: 94360.861167");
+        puts ("Output should be: 94,360.861");
         return (1);
     }
 }
