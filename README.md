@@ -11,3 +11,6 @@ There is a tendency lately to have online calculators for most things. This is g
 * tanklc.c   - finds L or C that will produce a specific tank resonance frequency
 * valfind.c  - LM317 resistor divider to obtain a desired output voltage
 * zout.c     - finds amplifier output impedance using 2 resistors and output voltage
+### What needs to be done
+* Find series and parallel resistor combinations based on an input resistance value
+* Transformer winding calc: how many conductor turns fit through holes in cores
