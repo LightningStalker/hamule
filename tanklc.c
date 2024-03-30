@@ -13,8 +13,11 @@ int main (int argc, char **argv)
 
     if (argc == 3)
     {
-        printf ("%'.9f\n", pow(1 / atof(argv[1]) / 6.28318530717958648, 2) /
-                atof(argv[2]) * pow(10,6));
+        printf ("%'.9f\n",
+            pow(1 /
+            atof(argv[1]) / (2 * M_PI), 2) /
+            atof(argv[2]) * 10e5
+            );
         return (0);
     }
     else
@@ -23,7 +26,7 @@ int main (int argc, char **argv)
         puts ("output is value in microhenries or microfarads\n");
         puts ("Usage: tanklc fres(kHz) {L,C}(µH,µF)");
         puts ("Example: tanklc 300.000 38");
-        puts ("Output should be: 0.007407");
+        puts ("Output should be: 0.007406519");
         return (1);
     }
 }

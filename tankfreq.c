@@ -13,8 +13,13 @@ int main (int argc, char **argv)
 
     if (argc == 3)
     {
-        printf ("%'.3f\n", 1 / (2 * M_PI * sqrt (atof(argv[1]) /
-            1000000 * atof(argv[2]) / 1000000)));
+        printf ("%'.3f\n",
+            1 / (
+            2 * M_PI * sqrt (
+                atof(argv[1]) * atof(argv[2]) * 10e-13
+                )
+            )
+        );
         return (0);
     }
     else
@@ -22,7 +27,7 @@ int main (int argc, char **argv)
         puts ("tankfreq is an LC tank resonance frequency calculator.");
         puts ("output is frequency in Hz\n");
         puts ("Usage: tankfreq microfarads microhenries");
-        puts ("Example: tankfreq 3.3 .86207");
+        puts ("Example: tankfreq 3.3 0.86207");
         puts ("Output should be: 94,360.861");
         return (1);
     }

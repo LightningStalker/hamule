@@ -50,8 +50,13 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+bias
 clod
+clod (base loaded)
 elcut
+joules
+rcfilt
+salkey
 seriesw
 tankfreq
 tanklc
