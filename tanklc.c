@@ -16,7 +16,7 @@ int main (int argc, char **argv)
         printf ("%'.9f\n",
             pow(1 /
             atof(argv[1]) / (2 * M_PI), 2) /
-            atof(argv[2]) * 10e5
+            atof(argv[2]) * 1e6
             );
         return (0);
     }

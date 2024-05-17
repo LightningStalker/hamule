@@ -1,5 +1,5 @@
-/* Compile with gcc -Wall -o tankfreq tankfreq.c -lm
-    The Lightning Stalker 2014 */
+/* Compile with gcc -Wall -o rcfilt rcfilt.c -lm
+    The Lightning Stalker 2024 */
 
 #include <math.h>
 #include <stdio.h>
@@ -16,7 +16,7 @@ int main (int argc, char **argv)
         printf ("%'.6f\n",
             1 / (
                 2 * M_PI * atof(argv[1]) * atof(argv[2]) *
-                10e-7
+                1e-6
                 )
             );
         return (0);

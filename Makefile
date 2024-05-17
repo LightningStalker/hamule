@@ -6,10 +6,11 @@ M = -lm
 all: hamule
 
 hamule:
-	$(CC) $(CCFLAGS) -o bias bias.c $(M)
+#	$(CC) $(CCFLAGS) -o bias bias.c $(M)
 	$(CC) $(CCFLAGS) -o clod clod.c $(M)
 	$(CC) $(CCFLAGS) -o 'clod (base loaded)' 'clod (base loaded).c' $(M)
 	$(CC) $(CCFLAGS) -o elcut elcut.c
+	$(CC) $(CCFLAGS) -o gainmargin gainmargin.c $(M)
 	$(CC) $(CCFLAGS) -o joules joules.c $(M)
 	$(CC) $(CCFLAGS) -o rcfilt rcfilt.c $(M)
 	$(CC) $(CCFLAGS) -o seriesw seriesw.c $(M)
@@ -20,10 +21,11 @@ hamule:
 	$(CC) $(CCFLAGS) -o zout zout.c
 
 clean:
-	$(RM) bias
+#	$(RM) bias
 	$(RM) clod
 	$(RM) 'clod (base loaded)'
 	$(RM) elcut
+	$(RM) gainmargin
 	$(RM) joules
 	$(RM) rcfilt
 	$(RM) seriesw

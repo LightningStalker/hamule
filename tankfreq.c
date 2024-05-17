@@ -16,7 +16,7 @@ int main (int argc, char **argv)
         printf ("%'.3f\n",
             1 / (
             2 * M_PI * sqrt (
-                atof(argv[1]) * atof(argv[2]) * 10e-13
+                atof(argv[1]) * atof(argv[2]) * 1e-12
                 )
             )
         );
