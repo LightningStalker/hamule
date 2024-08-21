@@ -9,11 +9,11 @@
 
 void
 usage(void) {
-    puts ("zipz calculates the impedance of ladder line and zip cord");
+    puts ("zipz calculates the impedance of open wire line and zip cord");
     puts ("and reverse calculation of conductor spacing");
     puts ("output is impedance in Ohms\n");
     puts ("Usage: zipz distance radius k");
-    puts ("   or: zipz -r impedance, radius, k");
+    puts ("   or: zipz -r impedance radius k");
     puts ("Distance is distance between centers of conductors");
     puts ("Radius is radius of one conductor");
     puts ("k is relative permittivity in region between conductors\n");
@@ -70,7 +70,6 @@ int main (int argc, char **argv)
                 }
                 break;
             default: /* '?' */
-                puts("default");
                 usage();
             }
     }
