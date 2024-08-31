@@ -2,11 +2,13 @@ CC = gcc
 RM = rm -f
 CCFLAGS = -Wall
 M = -lm
+PREFIX = /usr/local
 
 all: hamule
 
 hamule:
 #	$(CC) $(CCFLAGS) -o bias bias.c $(M)
+	$(CC) $(CCFLAGS) -o boost boost.c
 	$(CC) $(CCFLAGS) -o clod clod.c $(M)
 	$(CC) $(CCFLAGS) -o 'clod (base loaded)' 'clod (base loaded).c' $(M)
 	$(CC) $(CCFLAGS) -o elcut elcut.c
@@ -22,23 +24,25 @@ hamule:
 	$(CC) $(CCFLAGS) -o zout zout.c
 
 install:
-#	cp ./bias /usr/local/bin
-	cp ./clod /usr/local/bin
-	cp ./'clod (base loaded)' /usr/local/bin
-	cp ./elcut /usr/local/bin
-	cp ./gainmargin /usr/local/bin
-	cp ./joules /usr/local/bin
-	cp ./rcfilt /usr/local/bin
-	cp ./seriesw /usr/local/bin
-	cp ./salkey /usr/local/bin
-	cp ./tankfreq /usr/local/bin
-	cp ./tanklc /usr/local/bin
-	cp ./valfind /usr/local/bin
-	cp ./zipz /usr/local/bin
-	cp ./zout /usr/local/bin
+#	cp ./bias $(PREFIX)/bin
+	cp ./boost $(PREFIX)/bin
+	cp ./clod $(PREFIX)/bin
+	cp ./'clod (base loaded)' $(PREFIX)/bin
+	cp ./elcut $(PREFIX)/bin
+	cp ./gainmargin $(PREFIX)/bin
+	cp ./joules $(PREFIX)/bin
+	cp ./rcfilt $(PREFIX)/bin
+	cp ./seriesw $(PREFIX)/bin
+	cp ./salkey $(PREFIX)/bin
+	cp ./tankfreq $(PREFIX)/bin
+	cp ./tanklc $(PREFIX)/bin
+	cp ./valfind $(PREFIX)/bin
+	cp ./zipz $(PREFIX)/bin
+	cp ./zout $(PREFIX)/bin
 
 clean:
 #	$(RM) bias
+	$(RM) boost
 	$(RM) clod
 	$(RM) 'clod (base loaded)'
 	$(RM) elcut

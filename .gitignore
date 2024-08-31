@@ -51,9 +51,11 @@ Module.symvers
 Mkfile.old
 dkms.conf
 bias
+boost
 clod
 clod (base loaded)
 elcut
+formvar
 gainmargin
 joules
 rcfilt
