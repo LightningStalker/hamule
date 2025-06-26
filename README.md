@@ -9,6 +9,7 @@ There is a tendency lately to have online calculators for most things. This is g
 * elcut.c      - element cutting, a tuning aid to find how much to cut off
 * formvar.c    - user interface for entering data into calculators
 * gainmargin.c - critical gain margin calculator for crystal oscillators
+* haeguys.c    - guy wires calculator
 * joules.c     - Joule energy calc
 * rcfilt.c     - RC filter calc
 * seriesw.c    - potentiometer resistance and wattage, helps reduce the chance of 'pot burnout'
