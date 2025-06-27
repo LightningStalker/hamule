@@ -1,4 +1,4 @@
-/* Compile with gcc -Wall -o tankfreq tankfreq.c -lm
+/* Compile with gcc -Wall -o haeguys haeguys.c -lm
  *  The Lightning Stalker 6/25/2025
  */
 
@@ -11,6 +11,7 @@
 #define M_PI 3.14159265358979323846 /* pi */
 #endif
 #endif
+
 int
 main(int argc, char ** argv)
 {
@@ -21,7 +22,9 @@ main(int argc, char ** argv)
             double height              = atof(argv[1]),
                    /* convert to radians */
                    angle               = M_PI / (180 / atof(argv[2])),
+                   /* law of sines */
                    guyl                = height / sin(angle),
+                   /* pythagorean theorem */
                    circumscribedCircle = sqrt(pow(guyl, 2) - pow(height, 2));
 
             printf("length of each guy wire: %'.3f\n", guyl);
@@ -32,7 +35,7 @@ main(int argc, char ** argv)
         }
     }
     
-    else
+    else  /* print usage */
     {
 	puts("haeguys is a guy wire setup calculator.");
 	puts("it is unit agnostic and meant for 3 guy wires\n");
