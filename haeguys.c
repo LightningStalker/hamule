@@ -27,21 +27,27 @@ main(int argc, char ** argv)
                    /* pythagorean theorem */
                    circumscribedCircle = sqrt(pow(guyl, 2) - pow(height, 2));
 
-            printf("length of each guy wire: %'.3f\n", guyl);
-            printf("distance of guying stakes from center: %'.3f\n",
+            printf("%.3f  (length of each guy wire) total (x3) = %.3f\n", guyl, guyl * 3);
+            printf("%.3f  (distance of guying stakes from center)\n",
                 circumscribedCircle);
-            printf("distance between corners: %'.3f\n", circumscribedCircle * sqrt(3));
+            printf("%.3f  (distance between corners)\n", circumscribedCircle * sqrt(3));
+            
             exit(EXIT_SUCCESS);
         }
     }
     
     else  /* print usage */
     {
-	puts("haeguys is a guy wire setup calculator.");
-	puts("it is unit agnostic and meant for 3 guy wires\n");
-	puts("Usage: haeguys [mast height] [desired angle in degrees]");
-	puts("Example: haeguys 16 45");
-	puts("Output should be: 22.627, 16.000, and 27.713");
+        puts("\n  haeguys is a guy wire setup calculator.");
+        puts("  it is unit agnostic and meant for 3 guy wires\n");
+        puts("  Usage: haeguys [mast height] [desired angle in degrees]");
+        puts("  Example: haeguys 16 45");
+        puts("  Output should be: 22.627, 16.000, and 27.713");
+#if defined (__GNUC__)
+        putchar('\n');
+#endif
+        
         exit(EXIT_FAILURE);
     }
+    return(EXIT_SUCCESS);  /* some cc generate warning without it */
 }
