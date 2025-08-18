@@ -25,7 +25,7 @@ usage(void) {
 }
 
 void
-calculate(float k, float d, float r) {
+calculate(float d, float r, float k) {
     printf ("%'.1f\n",
         276.0 /
         sqrtf(k) *
