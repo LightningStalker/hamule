@@ -13,6 +13,7 @@ There is a tendency lately to have online calculators for most things. This is g
 * joules.c     - Joule energy calc
 * maids.c      - convert to/from maidenhead locator, needs maidenhead library https://github.com/sp6q/maidenhead see maids.c
 * rcfilt.c     - RC filter calc
+* salkey.c     - Sallen-Key filter
 * seriesw.c    - potentiometer resistance and wattage, helps reduce the chance of 'pot burnout'
 * tankfreq.c   - calculates LC tank resonant frequency given L and C values
 * tanklc.c     - finds L or C that will produce a specific tank resonance frequency

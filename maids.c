@@ -42,10 +42,10 @@ main(int argc, char ** argv)
             puts("  Usage: maids [maidenhead locator]");
             puts("     or: maids [latitude] [longitude]\n");
 
-            puts("  Example: $ maids EF17");
+            puts("  Example:  $ maids EF17");
             puts("  Output should be: -32.518924, -97.037847\n");
 
-            puts("  Example: $ maids -32.518 -97.037");
+            puts("  Example:  $ maids -32.518 -97.037");
             puts("  Output should be: EF17LL\n");
 
             return(EXIT_FAILURE);
