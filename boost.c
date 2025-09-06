@@ -6,17 +6,16 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
 #include <string.h>
 
+#if defined (__GNUC__)
 #define MAX(x, y) ( \
         { __auto_type __x = (x); __auto_type __y = (y); \
           __x > __y ? __x : __y; })
+#endif
 
 int
 main(int argc, char ** argv){
-    unsetenv("LC_ALL");
-    setlocale(LC_NUMERIC, ""); // This should give us digit grouping
 
     char strg[40];
     double
@@ -90,7 +89,7 @@ main(int argc, char ** argv){
         L = L * 1e6;
 
 
-        printf("%'.3d\n%'.3d\n%'.3f\n%'.3f\n%'.3f\n%'.3f\n",
+        printf("%'d\n%'d\n%'.3f\n%'.3f\n%'.3f\n%'.3f\n",
                minduty,
                maxduty,
                L,
@@ -105,7 +104,7 @@ main(int argc, char ** argv){
         puts("7 position dependent input paramaters from stdin, 1 per line");
         puts("scriptable and designed to be used with formvar");
         puts("Input: frequency, Vinmin, Vinmax, Voutmin, Voutmax, Iout, Vripple");
-        puts("Output: minduty, maxduty, L, Ipeak, capacitance, Voutmax");
+        puts("Output: minduty, maxduty, L(µH), Ipeak, capacitance(µF), Voutmax");
         exit(EXIT_FAILURE);
     }
 } /* main */

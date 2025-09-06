@@ -13,7 +13,7 @@ int main (int argc, char **argv)
 
     if (argc == 3)
     {
-        printf ("%'.3f\n", 0.0000005 * atof(argv[1]) * \
+        printf ("%'.3f\n", 5e-7 * atof(argv[1]) * \
             powf(atof(argv[2]), 2));
         return (0);
     }

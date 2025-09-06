@@ -16,7 +16,7 @@ hamule:
 	$(CC) $(CCFLAGS) -o joules joules.c $(M)
 	$(CC) $(CCFLAGS) -o rcfilt rcfilt.c $(M)
 	$(CC) $(CCFLAGS) -o seriesw seriesw.c $(M)
-	$(CC) $(CCFLAGS) -o salkey salkey.c $(M)
+#	$(CC) $(CCFLAGS) -o salkey salkey.c $(M)
 	$(CC) $(CCFLAGS) -o tankfreq tankfreq.c $(M)
 	$(CC) $(CCFLAGS) -o tanklc tanklc.c $(M)
 	$(CC) $(CCFLAGS) -o valfind valfind.c
@@ -33,7 +33,7 @@ install:
 	cp ./joules $(PREFIX)/bin
 	cp ./rcfilt $(PREFIX)/bin
 	cp ./seriesw $(PREFIX)/bin
-	cp ./salkey $(PREFIX)/bin
+#	cp ./salkey $(PREFIX)/bin
 	cp ./tankfreq $(PREFIX)/bin
 	cp ./tanklc $(PREFIX)/bin
 	cp ./valfind $(PREFIX)/bin
