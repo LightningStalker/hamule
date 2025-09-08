@@ -38,7 +38,7 @@ main(int argc, char ** argv)
     }else
     {
         fputs("\n"
-              "  "PROGNAME" is a sallen key filter cutoff frequency calculator.\n"
+              "  "PROGNAME" is a Sallen-Key filter cutoff frequency calculator.\n"
               "  of the type R1 = R2 = R\n"
               "              C1 = C2 = C\n"
               "  output is frequency in Hz\n"

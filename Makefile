@@ -14,6 +14,7 @@ hamule:
 	$(CC) $(CCFLAGS) -o elcut elcut.c
 	$(CC) $(CCFLAGS) -o gainmargin gainmargin.c $(M)
 	$(CC) $(CCFLAGS) -o joules joules.c $(M)
+	$(CC) $(CCFLAGS) -o lpda lpda.c $(M)
 	$(CC) $(CCFLAGS) -o rcfilt rcfilt.c $(M)
 	$(CC) $(CCFLAGS) -o seriesw seriesw.c $(M)
 	$(CC) $(CCFLAGS) -o salkey salkey.c $(M)
@@ -31,6 +32,7 @@ install:
 	cp ./elcut $(PREFIX)/bin
 	cp ./gainmargin $(PREFIX)/bin
 	cp ./joules $(PREFIX)/bin
+	cp ./lpda $(PREFIX)/bin
 	cp ./rcfilt $(PREFIX)/bin
 	cp ./seriesw $(PREFIX)/bin
 	cp ./salkey $(PREFIX)/bin
@@ -48,6 +50,7 @@ clean:
 	$(RM) elcut
 	$(RM) gainmargin
 	$(RM) joules
+	$(RM) lpda
 	$(RM) rcfilt
 	$(RM) seriesw
 	$(RM) salkey

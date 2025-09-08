@@ -11,6 +11,7 @@ There is a tendency lately to have online calculators for most things. This is g
 * gainmargin.c - critical gain margin calculator for crystal oscillators
 * haeguys.c    - guy wires calculator
 * joules.c     - Joule energy calc
+* lpda.c       - Log-Periodic antenna
 * maids.c      - convert to/from maidenhead locator, needs maidenhead library https://github.com/sp6q/maidenhead see maids.c
 * rcfilt.c     - RC filter calc
 * salkey.c     - Sallen-Key filter
