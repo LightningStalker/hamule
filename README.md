@@ -13,6 +13,7 @@ There is a tendency lately to have online calculators for most things. This is g
 * joules.c     - Joule energy calc
 * lpda.c       - Log-Periodic antenna
 * maids.c      - convert to/from maidenhead locator, needs maidenhead library https://github.com/sp6q/maidenhead see maids.c
+* moxon.c      - Moxon antennas get dimensions
 * rcfilt.c     - RC filter calc
 * salkey.c     - Sallen-Key filter
 * seriesw.c    - potentiometer resistance and wattage, helps reduce the chance of 'pot burnout'
