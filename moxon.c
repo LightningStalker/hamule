@@ -83,16 +83,21 @@ main(int argc, char ** argv)
 
         /* time to print the hard work */
         printf("\n"
-               "  working freq: %'10.3fMHz    wire diameter:            %4.1fmm\n"
-               "    wavelength:  %8.2fm       wire diam. in wavelengths: %.6f\n"
-               "  ___________________________________________________________________\n"
+               "  using freq: %'10.3fMHz                wire diameter:  %5.1fmm\n"
+               "  wavelength:  %8.2fm       wire diam. in wavelengths:    %.6f\n"
+               "  ____________________________________________________________________\n"
                "  in wavelengths    in centimeters\n"
-               "  A = %.5f        %'8.2fcm\n"
-               "  B = %.5f        %8.2fcm\n"
-               "  C = %.5f        %8.2fcm\n"
-               "  D = %.5f        %8.2fcm\n"
-               "  E = %.5f        %'8.2fcm\n"
+               "   A = %.5f       %'8.2fcm\n"
+               "   B = %.5f       %'8.2fcm\n"
+               "   C = %.5f       %8.2fcm\n"
+               "   D = %.5f       %'8.2fcm\n"
+               "   E = %.5f       %'8.2fcm\n"
                "\n", f, wd, wl, dw, a, ac, b, bc, c, cc, d, dc, e, ec);
+
+        if (d1 < -6)
+            puts("  WARN: Wire diameter less than 1E-6 wavelengths: results uncertain.\n");
+        if (d1 > -2)
+            puts("  WARN: Wire diameter greater than 1E-2 wavelengths: results uncertain.\n");
 
         return (EXIT_SUCCESS);
     }else

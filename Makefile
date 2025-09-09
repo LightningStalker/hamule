@@ -22,7 +22,7 @@ hamule:
 	$(CC) $(CCFLAGS) -o tankfreq tankfreq.c $(M)
 	$(CC) $(CCFLAGS) -o tanklc tanklc.c $(M)
 	$(CC) $(CCFLAGS) -o valfind valfind.c
-	$(CC) $(CCFLAGS) -o zipz zipz.c -lm
+	$(CC) $(CCFLAGS) -o zipz zipz.c $(M)
 	$(CC) $(CCFLAGS) -o zout zout.c
 
 install:
