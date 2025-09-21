@@ -1,18 +1,23 @@
 CC = gcc
 RM = rm -f
-CCFLAGS = -Wall
+CCFLAGS = -Os#-Wall
 M = -lm
 PREFIX = /usr/local
+FORM = -lform
+CURSES = -lncurses
 
 all: hamule
 
 hamule:
 #	$(CC) $(CCFLAGS) -o bias bias.c $(M)
-	$(CC) $(CCFLAGS) -o boost boost.c
+	$(CC) -o boost boost.c
 	$(CC) $(CCFLAGS) -o clod clod.c $(M)
 	$(CC) $(CCFLAGS) -o 'clod (base loaded)' 'clod (base loaded).c' $(M)
 	$(CC) $(CCFLAGS) -o elcut elcut.c
+#	$(CC) $(CCFLAGS) -o formvar formvar.c $(FORM) $(CURSES)
 	$(CC) $(CCFLAGS) -o gainmargin gainmargin.c $(M)
+	$(CC) $(CCFLAGS) -o hb hb.c $(M)
+	$(CC) $(CCFLAGS) -o haeguys haeguys.c $(M)
 	$(CC) $(CCFLAGS) -o joules joules.c $(M)
 	$(CC) $(CCFLAGS) -o lpda lpda.c $(M)
 	$(CC) $(CCFLAGS) -o moxon moxon.c $(M)
@@ -31,7 +36,10 @@ install:
 	cp ./clod $(PREFIX)/bin
 	cp ./'clod (base loaded)' $(PREFIX)/bin
 	cp ./elcut $(PREFIX)/bin
+#	cp ./formvar $(PREFIX)/bin
 	cp ./gainmargin $(PREFIX)/bin
+	cp ./haeguys $(PREFIX)/bin
+	cp ./hb $(PREFIX)/bin
 	cp ./joules $(PREFIX)/bin
 	cp ./lpda $(PREFIX)/bin
 	cp ./moxon $(PREFIX)/bin
@@ -50,7 +58,10 @@ clean:
 	$(RM) clod
 	$(RM) 'clod (base loaded)'
 	$(RM) elcut
+#	$(RM) formvar
 	$(RM) gainmargin
+	$(RM) haeguys
+	$(RM) hb
 	$(RM) joules
 	$(RM) lpda
 	$(RM) moxon

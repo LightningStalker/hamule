@@ -20,7 +20,7 @@ main(int argc, char ** argv)
             lat = mh2lat(locator);
             lon = mh2lon(locator);
 
-            printf("%f, %f\n", lat, lon);
+            printf("%f %f\n", lat, lon);
 
             return(EXIT_SUCCESS);
             break;

@@ -1,5 +1,6 @@
 /* Compile with gcc -Wall -o haeguys haeguys.c -lm
- *  The Lightning Stalker 6/25/2025
+ * 3 Guy Wires
+ *  Project Crew 6/25/2025
  */
 
 #include <math.h>
