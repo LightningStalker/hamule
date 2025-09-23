@@ -17,6 +17,7 @@ hamule:
 #	$(CC) $(CCFLAGS) -o formvar formvar.c $(FORM) $(CURSES)
 	$(CC) $(CCFLAGS) -o gainmargin gainmargin.c $(M)
 	$(CC) $(CCFLAGS) -o hb hb.c $(M)
+	$(CC) $(CCFLAGS) -o hae4guys hae4guys.c $(M)
 	$(CC) $(CCFLAGS) -o haeguys haeguys.c $(M)
 	$(CC) $(CCFLAGS) -o joules joules.c $(M)
 	$(CC) $(CCFLAGS) -o lpda lpda.c $(M)
@@ -38,6 +39,7 @@ install:
 	cp ./elcut $(PREFIX)/bin
 #	cp ./formvar $(PREFIX)/bin
 	cp ./gainmargin $(PREFIX)/bin
+	cp ./hae4guys $(PREFIX)/bin
 	cp ./haeguys $(PREFIX)/bin
 	cp ./hb $(PREFIX)/bin
 	cp ./joules $(PREFIX)/bin
@@ -60,6 +62,7 @@ clean:
 	$(RM) elcut
 #	$(RM) formvar
 	$(RM) gainmargin
+	$(RM) hae4guys
 	$(RM) haeguys
 	$(RM) hb
 	$(RM) joules
