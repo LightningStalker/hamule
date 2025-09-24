@@ -1,15 +1,16 @@
-/* Compile with gcc -Wall -o hb hb.c -lm
- * Heading/Bearing between 2 points
- * Project Crew™ 9/20/2025
+/* Compile with gcc -Wall -o dist dist.c -lm
+ * Distance from A to B
+ * Project Crew™ 9/24/2025
  * Thanks you (https://www.movable-type.co.uk/scripts/latlong.html)
  */
 
-#define PROGNAME "hb"
+#define PROGNAME "dist"
 
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 
+#define R        6371e3                 /* mean radius of Earth in meaters */
 #if defined (__WATCOMC__)
 #ifndef M_PI
 #define M_PI     3.14159265358979323846 /* pi */
@@ -23,9 +24,10 @@ toRadians(float deg)
     return deg / (180.0 / M_PI);
 }
 
-/* get compass direction of initial bearing */
+/* get distance of remote */
+/* haversine formula      */
 float
-getDir
+getDistance
 (
     float lata,
     float lona,
@@ -33,14 +35,15 @@ getDir
     float lonb
 )
 {
-    float phi1,
+    float a,
+          c,
+          d,
+          phi1,
           phi2,
           lambda1,
           lambda2,
-          y,
-          x,
-          radians,
-          bearing;
+          delphi,
+          delambda;
 
     /* convert to radians */
     phi1    = toRadians(lata);
@@ -48,14 +51,21 @@ getDir
     phi2    = toRadians(latb);
     lambda2 = toRadians(lonb);
 
-    /* algorhythm */
-    y = sinf(lambda2 - lambda1) * cosf(phi2);
-    x = cosf(phi1) * sinf(phi2) -
-        sinf(phi1) * cosf(phi2) * cosf(lambda2 - lambda1);
-    radians = atan2f(y, x);
-    bearing = fmodf(radians * 180.0 / M_PI + 360.0, 360.0);
+    /* so far away */
+    delphi   = phi2    - phi1;
+    delambda = lambda2 - lambda1;
 
-    return bearing;
+    /* haversine formula */
+    a = sinf(delphi / 2.0)   * sinf(delphi / 2.0) +
+        cosf(phi1)           * cosf(phi2)         *
+        sinf(delambda / 2.0) * sinf(delambda / 2.0);
+
+    c = 2.0 * atan2f( sqrtf(a), sqrtf(1.0 - a) );
+
+    d = R * c;     /* in meters */
+    d = d * 1e-3;  /* in km     */
+
+    return d;
 }
 
 
@@ -74,27 +84,27 @@ main(int argc, char ** argv)
         latb = atof(argv[3]);
         lonb = atof(argv[4]);
 
-        printf("%.4f\n", getDir(lata, lona, latb, lonb));
+        printf("%.3f\n", getDistance(lata, lona, latb, lonb));
 
         return (EXIT_SUCCESS);
     }else
     {
         fputs("\n"
-              "  "PROGNAME" find the initial bearing from point A to point B\n"
-              "  It help points the antenna.\n"
+              "  "PROGNAME" find the distance from geographic point A to point B\n"
+              "  We use the haversine formula.  (Spherical model, so typical error ≦ 0.3%)\n"
               "\n"
               "  input WGS84 coordinates in signed decimal °degrees, negative is west/south\n"
               "    alpha characters is ignore\n"
-              "  output is compass bearing in degrees from true north\n"
-              "  standing on point A \"looking\" at point B\n"
+              "  output is distance in kilometers\n"
               "\n"
               "  Usage: "PROGNAME" [latitude A°] [longitude A°] [lat. B°] [long. B°]\n"
               "\n"
-              "  Example:  $ "PROGNAME" 32.715 -117.1625  34.69 135.502  (San Diego, USA - Osaka, JP)\n"
+              "  Example:  $ "PROGNAME" 32.715 -117.1625  34.69 135.502  (San Diego, US - Osaka, JP)\n"
               "\n"
-              "  Output should be: 307.9111 (degrees °)\n"
+              "  Output should be: 9360.033 (km)\n"
               "\n", stderr);
 
         return (EXIT_FAILURE);
     }
 }
+/* from me */

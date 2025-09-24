@@ -8,10 +8,15 @@ There is a tendency lately to have online calculators for most things. This is g
 The design for shell to chain them together and pipe between programs was there from the start. We make the example in maidhb.sh for you to see how it can convert from the maidenhead square to WGS84 lat/long to be use in 'hb' to find the compass heading. This way the output of one program can take as the input to other ones. We make them shell scripting friendly.
 ### Compile and run
 Cloning the repo and issuing the  $ make in the directory will build it for you most of the programs. Maidenhead converter 'maids.c' will need the library, see below.
+
+Understanding usage of the programs is easy because they show help automatically.
+
+Just run the program with no arguments and you will get the help screen.
 ### The Calculators
 * boost.c      - boost converters, find L, duty cycle, filter cap, etc.
 * clod.c       - coil loaded verticals or dipoles, variable coil position, center loded for example
 * clod (base loaded).c - base loading only, not very ideal but much simpler
+* dist         - get geographic distance to other station from A to B
 * elcut.c      - element cutting, a tuning aid to find how much to cut off
 * formvar.c    - user interface for entering data into calculators
 * gainmargin.c - critical gain margin calculator for crystal oscillators

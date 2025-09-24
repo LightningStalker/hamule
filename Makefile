@@ -13,6 +13,7 @@ hamule:
 	$(CC) -o boost boost.c
 	$(CC) $(CCFLAGS) -o clod clod.c $(M)
 	$(CC) $(CCFLAGS) -o 'clod (base loaded)' 'clod (base loaded).c' $(M)
+	$(CC) $(CCFLAGS) -o dist dist.c $(M)
 	$(CC) $(CCFLAGS) -o elcut elcut.c
 #	$(CC) $(CCFLAGS) -o formvar formvar.c $(FORM) $(CURSES)
 	$(CC) $(CCFLAGS) -o gainmargin gainmargin.c $(M)
@@ -36,6 +37,7 @@ install:
 	cp ./boost $(PREFIX)/bin
 	cp ./clod $(PREFIX)/bin
 	cp ./'clod (base loaded)' $(PREFIX)/bin
+	cp ./dist $(PREFIX)/bin
 	cp ./elcut $(PREFIX)/bin
 #	cp ./formvar $(PREFIX)/bin
 	cp ./gainmargin $(PREFIX)/bin
@@ -59,6 +61,7 @@ clean:
 	$(RM) boost
 	$(RM) clod
 	$(RM) 'clod (base loaded)'
+	$(RM) dist
 	$(RM) elcut
 #	$(RM) formvar
 	$(RM) gainmargin
