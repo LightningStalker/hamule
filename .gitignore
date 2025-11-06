@@ -53,7 +53,7 @@ dkms.conf
 bias
 boost
 clod
-clod (base loaded)
+bclod
 dist
 elcut
 formvar
@@ -65,6 +65,7 @@ joules
 lpda
 maids
 moxon
+pinh
 rcfilt
 salkey
 seriesw

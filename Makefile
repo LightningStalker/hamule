@@ -12,7 +12,7 @@ hamule:
 #	$(CC) $(CCFLAGS) -o bias bias.c $(M)
 	$(CC) -o boost boost.c
 	$(CC) $(CCFLAGS) -o clod clod.c $(M)
-	$(CC) $(CCFLAGS) -o 'clod (base loaded)' 'clod (base loaded).c' $(M)
+	$(CC) $(CCFLAGS) -o bclod bclod.c $(M)
 	$(CC) $(CCFLAGS) -o dist dist.c $(M)
 	$(CC) $(CCFLAGS) -o elcut elcut.c
 #	$(CC) $(CCFLAGS) -o formvar formvar.c $(FORM) $(CURSES)
@@ -23,6 +23,7 @@ hamule:
 	$(CC) $(CCFLAGS) -o joules joules.c $(M)
 	$(CC) $(CCFLAGS) -o lpda lpda.c $(M)
 	$(CC) $(CCFLAGS) -o moxon moxon.c $(M)
+	$(CC) $(CCFLAGS) -o pinh pinh.c $(M)
 	$(CC) $(CCFLAGS) -o rcfilt rcfilt.c $(M)
 	$(CC) $(CCFLAGS) -o seriesw seriesw.c $(M)
 	$(CC) $(CCFLAGS) -o salkey salkey.c $(M)
@@ -36,7 +37,7 @@ install:
 #	cp ./bias $(PREFIX)/bin
 	cp ./boost $(PREFIX)/bin
 	cp ./clod $(PREFIX)/bin
-	cp ./'clod (base loaded)' $(PREFIX)/bin
+	cp ./bclod $(PREFIX)/bin
 	cp ./dist $(PREFIX)/bin
 	cp ./elcut $(PREFIX)/bin
 #	cp ./formvar $(PREFIX)/bin
@@ -47,6 +48,7 @@ install:
 	cp ./joules $(PREFIX)/bin
 	cp ./lpda $(PREFIX)/bin
 	cp ./moxon $(PREFIX)/bin
+	cp ./pinh $(PREFIX)/bin
 	cp ./rcfilt $(PREFIX)/bin
 	cp ./seriesw $(PREFIX)/bin
 	cp ./salkey $(PREFIX)/bin
@@ -60,7 +62,7 @@ clean:
 #	$(RM) bias
 	$(RM) boost
 	$(RM) clod
-	$(RM) 'clod (base loaded)'
+	$(RM) bclod
 	$(RM) dist
 	$(RM) elcut
 #	$(RM) formvar
@@ -71,6 +73,7 @@ clean:
 	$(RM) joules
 	$(RM) lpda
 	$(RM) moxon
+	$(RM) pinh
 	$(RM) rcfilt
 	$(RM) seriesw
 	$(RM) salkey

@@ -17,6 +17,14 @@
 #endif
 #endif
 
+#if defined (__DOS__)
+#define LESYM    "\xf3"
+#define DEGSYM   "\xf8"
+#else
+#define LESYM    "≦"
+#define DEGSYM   "°"                    /* differences of the codepage */
+#endif
+
 
 float
 toRadians(float deg)
@@ -56,11 +64,21 @@ getDistance
     delambda = lambda2 - lambda1;
 
     /* haversine formula */
+#if defined (__WATCOMC__)
+    a = sin(delphi / 2.0)   * sin(delphi / 2.0) +
+        cos(phi1)           * cos(phi2)         *
+        sin(delambda / 2.0) * sin(delambda / 2.0);
+
+    c = 2.0 * atan2( sqrt(a), sqrt(1.0 - a) );
+
+    /* we like the fp specific function available here */
+#elif defined (__GNUC__)
     a = sinf(delphi / 2.0)   * sinf(delphi / 2.0) +
         cosf(phi1)           * cosf(phi2)         *
         sinf(delambda / 2.0) * sinf(delambda / 2.0);
 
     c = 2.0 * atan2f( sqrtf(a), sqrtf(1.0 - a) );
+#endif
 
     d = R * c;     /* in meters */
     d = d * 1e-3;  /* in km     */
@@ -91,13 +109,13 @@ main(int argc, char ** argv)
     {
         fputs("\n"
               "  "PROGNAME" find the distance from geographic point A to point B\n"
-              "  We use the haversine formula.  (Spherical model, so typical error ≦ 0.3%)\n"
+              "  We use the haversine formula.  (Spherical model, so typical error "LESYM" 0.3%)\n"
               "\n"
-              "  input WGS84 coordinates in signed decimal °degrees, negative is west/south\n"
+              "  input WGS84 coordinates in signed decimal "DEGSYM"degrees, negative is west/south\n"
               "    alpha characters is ignore\n"
               "  output is distance in kilometers\n"
               "\n"
-              "  Usage: "PROGNAME" [latitude A°] [longitude A°] [lat. B°] [long. B°]\n"
+              "  Usage: "PROGNAME" [latitude A"DEGSYM"] [longitude A"DEGSYM"] [lat. B"DEGSYM"] [long. B"DEGSYM"]\n"
               "\n"
               "  Example:  $ "PROGNAME" 32.715 -117.1625  34.69 135.502  (San Diego, US - Osaka, JP)\n"
               "\n"

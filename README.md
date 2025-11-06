@@ -15,7 +15,7 @@ Just run the program with no arguments and you will get the help screen.
 ### The Calculators
 * boost.c      - boost converters, find L, duty cycle, filter cap, etc.
 * clod.c       - coil loaded verticals or dipoles, variable coil position, center loded for example
-* clod (base loaded).c - base loading only, not very ideal but much simpler
+* bclod.c      - base loading only, not very ideal but much simpler
 * dist         - get geographic distance to other station from A to B
 * elcut.c      - element cutting, a tuning aid to find how much to cut off
 * formvar.c    - user interface for entering data into calculators
@@ -27,6 +27,7 @@ Just run the program with no arguments and you will get the help screen.
 * lpda.c       - Log-Periodic antenna
 * maids.c      - convert to/from maidenhead locator, needs maidenhead library https://github.com/sp6q/maidenhead see maids.c
 * moxon.c      - Moxon antennas get dimensions
+* pinh.c       - pinhole cameras calculator
 * rcfilt.c     - RC filter calc
 * salkey.c     - Sallen-Key filter
 * seriesw.c    - potentiometer resistance and wattage, helps reduce the chance of 'pot burnout'

@@ -9,13 +9,24 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#if defined (__GNUC__)
 #include <locale.h>
+#endif
+
+#if defined (__WATCOMC__)
+#ifndef M_PI
+#define M_PI 3.14159265358979323846 /* pi */
+#endif
+#endif
+
 
 int
 main(int argc, char ** argv)
 {
-    unsetenv("LC_ALL");
-    setlocale(LC_NUMERIC, "");  /* This should give us digit grouping */
+#if defined (__GNUC__)
+    unsetenv ("LC_ALL");
+    setlocale (LC_NUMERIC, "");  // This should give us digit grouping
+#endif
 
     float R,  /* resistor  R1 = R2 */
           C;  /* capacitor C1 = C2 */
@@ -28,12 +39,26 @@ main(int argc, char ** argv)
         R = R * R;
         C = C * C * 1e-12;
 
+#if defined (__GNUC__)
         printf("%'.0f\n", \
                round(
                    1 /
                    ( 2 * M_PI * sqrt(R * C) )
                    )
-               );
+              );
+#elif defined (__WATCOMC__)
+        printf("%.0f\n", \
+                   1 /
+                   ( 2 * M_PI * sqrt(R * C) )
+              );
+#else
+        printf("%.0f\n", \
+               round(
+                   1 /
+                   ( 2 * M_PI * sqrt(R * C) )
+                   )
+              );
+#endif
         return (EXIT_SUCCESS);
     }else
     {

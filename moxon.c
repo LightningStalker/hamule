@@ -9,7 +9,9 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#if defined (__GNUC__)
 #include <locale.h>
+#endif
 
 
 /* speed of light */
@@ -36,8 +38,10 @@
 int
 main(int argc, char ** argv)
 {
-    unsetenv("LC_ALL");
-    setlocale(LC_NUMERIC, "");  /* This should give us digit grouping */
+#if defined (__GNUC__)
+    unsetenv ("LC_ALL");
+    setlocale (LC_NUMERIC, "");  // This should give us digit grouping
+#endif
 
     double f,   /* design frequency    */
            wd,  /* wire diameter       */
@@ -55,6 +59,10 @@ main(int argc, char ** argv)
            dc,  /* ...                 */
            ec;  /* ...                 */
 
+#if defined (__DOS__)
+    int t;
+#endif
+
 
     if (argc == 3)
     {
@@ -63,12 +71,20 @@ main(int argc, char ** argv)
 
         wl = M_C / f;
         dw = wd / (wl * 1000.0);
-        d1 = log10f(dw);
+#if defined (__WATCOMC__)
+        d1 = log10(dw);
 
         /* malt-o-polyno-meal */
+        a = (AA * (pow(d1, 2.0))) + (AB * d1) + AC;
+        b = (BA * (pow(d1, 2.0))) + (BB * d1) + BC;
+        c = (CA * (pow(d1, 2.0))) + (CB * d1) + CC;
+#else
+        d1 = log10f(dw);
+
         a = (AA * (powf(d1, 2.0))) + (AB * d1) + AC;
         b = (BA * (powf(d1, 2.0))) + (BB * d1) + BC;
         c = (CA * (powf(d1, 2.0))) + (CB * d1) + CC;
+#endif
         d = (DA * d1) + DB;
         e = (b + c) + d;
 
@@ -82,17 +98,56 @@ main(int argc, char ** argv)
 
 
         /* time to print the hard work */
-        printf("\n"
-               "  using freq: %'10.3fMHz                wire diameter:  %5.1fmm\n"
+#if defined (__GNUC__)
+        printf( \
+                "\n"
+                "  using freq: %'10.3fMHz                wire diameter:  %5.1fmm\n"
+                "  wavelength:  %8.2fm       wire diam. in wavelengths:    %.6f\n"
+                "  ____________________________________________________________________\n"
+                "  in wavelengths    in centimeters\n"
+                "   A = %.5f       %'8.2fcm\n"
+                "   B = %.5f       %'8.2fcm\n"
+                "   C = %.5f       %8.2fcm\n"
+                "   D = %.5f       %'8.2fcm\n"
+                "   E = %.5f       %'8.2fcm\n"
+                "\n", f, wd, wl, dw, a, ac, b, bc, c, cc, d, dc, e, ec
+              );
+#elif defined (__DOS__)
+        printf( \
+                "\n"
+                "  using freq: %10.3fMHz                wire diameter:  %5.1fmm\n"
+                "  wavelength:  %8.2fm       wire diam. in wavelengths:    %.6f\n"
+                "  ", f, wd, wl, dw
+              );
+        for(t = 0; t < 68; t++)
+        {
+            putchar('\xc4');
+        }
+        printf( \
+                "\n"
+                "  in wavelengths    in centimeters\n"
+                "   A = %.5f       %8.2fcm\n"
+                "   B = %.5f       %8.2fcm\n"
+                "   C = %.5f       %8.2fcm\n"
+                "   D = %.5f       %8.2fcm\n"
+                "   E = %.5f       %8.2fcm\n"
+                "\n", a, ac, b, bc, c, cc, d, dc, e, ec
+              );
+            #else
+        printf( \
+               "\n"
+               "  using freq: %10.3fMHz                wire diameter:  %5.1fmm\n"
                "  wavelength:  %8.2fm       wire diam. in wavelengths:    %.6f\n"
                "  ____________________________________________________________________\n"
                "  in wavelengths    in centimeters\n"
-               "   A = %.5f       %'8.2fcm\n"
-               "   B = %.5f       %'8.2fcm\n"
+               "   A = %.5f       %8.2fcm\n"
+               "   B = %.5f       %8.2fcm\n"
                "   C = %.5f       %8.2fcm\n"
-               "   D = %.5f       %'8.2fcm\n"
-               "   E = %.5f       %'8.2fcm\n"
-               "\n", f, wd, wl, dw, a, ac, b, bc, c, cc, d, dc, e, ec);
+               "   D = %.5f       %8.2fcm\n"
+               "   E = %.5f       %8.2fcm\n"
+               "\n", f, wd, wl, dw, a, ac, b, bc, c, cc, d, dc, e, ec
+              );
+#endif
 
         if (d1 < -6)
             puts("  WARN: Wire diameter less than 1E-6 wavelengths: results uncertain.\n");

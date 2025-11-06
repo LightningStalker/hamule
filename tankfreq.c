@@ -4,12 +4,21 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#if defined (__GNUC__)
 #include <locale.h>
+#endif
+
+#if defined (__VBCC__)
+# define M_PI		3.14159265358979323846	/* pi */
+#endif
+
 
 int main (int argc, char **argv)
 {
+#if defined (__GNUC__)
     unsetenv ("LC_ALL");
     setlocale (LC_NUMERIC, "");  // This should give us digit grouping
+#endif
 
     if (argc == 3)
     {

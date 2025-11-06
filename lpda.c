@@ -8,16 +8,27 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#if defined (__GNUC__)
 #include <locale.h>
+#endif
 
 /* speed of light */
 #define M_C      299792458
 
+#if defined (__DOS__)
+#define TAU   "\xe7"
+#else
+#define TAU   "τ"                     /* differences of the codepage */
+#endif
+
+
 int
 main(int argc, char ** argv)
 {
-    unsetenv("LC_ALL");
-    setlocale(LC_NUMERIC, "");  /* This should give us digit grouping */
+#if defined (__GNUC__)
+    unsetenv ("LC_ALL");
+    setlocale (LC_NUMERIC, "");  // This should give us digit grouping
+#endif
 
     int n, t;           /* number elements */
 
@@ -48,7 +59,11 @@ main(int argc, char ** argv)
         }
 
         /* find scaling factor */
+#if defined (__WATCOMC__)
+        tau = pow( 10, log10(fl / fh) / (n - 1) );
+#elif defined (__GNUC__)
         tau = powf( 10, log10f(fl / fh) / (n - 1) );
+#endif
 
         /* boom length */
         boom_length = M_C / (fl * 1e4);
@@ -63,10 +78,17 @@ main(int argc, char ** argv)
         xn = ratio * boom_length * (1 - tau);
 
         /* time to print the hard work */
+#if defined (__GNUC__)
         printf("\n"
-               "  scaling factor τ = %.6f\n"
+               "  scaling factor "TAU" = %.6f\n"
                "  boom length      = %'.1fcm\n"
                "\n", tau, boom_length);
+#else
+        printf("\n"
+               "  scaling factor "TAU" = %.6f\n"
+               "  boom length      = %.1fcm\n"
+               "\n", tau, boom_length);
+#endif
 
         puts("      length   spacing\n"
              "  ______________________");
@@ -102,7 +124,6 @@ main(int argc, char ** argv)
               "\n"
               "  (https://en.wikipedia.org/wiki/Log-periodic_antenna)\n"
               "\n", stderr);
-
-        return (EXIT_FAILURE);
     }
+    return (EXIT_FAILURE);
 }
