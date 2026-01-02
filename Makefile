@@ -23,6 +23,7 @@ hamule:
 	$(CC) $(CCFLAGS) -o joules joules.c $(M)
 	$(CC) $(CCFLAGS) -o lpda lpda.c $(M)
 	$(CC) $(CCFLAGS) -o moxon moxon.c $(M)
+	$(CC) $(CCFLAGS) -o nib nib.c $(M)
 	$(CC) $(CCFLAGS) -o pinh pinh.c $(M)
 	$(CC) $(CCFLAGS) -o rcfilt rcfilt.c $(M)
 	$(CC) $(CCFLAGS) -o seriesw seriesw.c $(M)
@@ -48,6 +49,7 @@ install:
 	cp ./joules $(PREFIX)/bin
 	cp ./lpda $(PREFIX)/bin
 	cp ./moxon $(PREFIX)/bin
+	cp ./nib $(PREFIX)/bin
 	cp ./pinh $(PREFIX)/bin
 	cp ./rcfilt $(PREFIX)/bin
 	cp ./seriesw $(PREFIX)/bin
@@ -73,6 +75,7 @@ clean:
 	$(RM) joules
 	$(RM) lpda
 	$(RM) moxon
+	$(RM) nib
 	$(RM) pinh
 	$(RM) rcfilt
 	$(RM) seriesw

@@ -1,0 +1,4 @@
+# Makefile pseudocode for Apple II
+vc +apple2r -O=65535 -size -ieee -o tf tankfreq.c -lmieee
+/home/robert/src/ciderpress/cp2 a --overwrite work.dsk /home/robert/src/hamule/tf#060800
+linapple --d1 worker.dsk -b

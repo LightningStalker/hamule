@@ -27,6 +27,7 @@ Just run the program with no arguments and you will get the help screen.
 * lpda.c       - Log-Periodic antenna
 * maids.c      - convert to/from maidenhead locator, needs maidenhead library https://github.com/sp6q/maidenhead see maids.c
 * moxon.c      - Moxon antennas get dimensions
+* nib.c        - Convert the number to MiB, KiB, etc. (IEC 60027-2 A.2)
 * pinh.c       - pinhole cameras calculator
 * rcfilt.c     - RC filter calc
 * salkey.c     - Sallen-Key filter
