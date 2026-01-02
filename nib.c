@@ -1,5 +1,5 @@
-/* Compile with gcc -o bclod bclod.c -lm
- * convert numbers to *iba* format
+/* Compile with gcc -o nib nib.c -lm
+ * convert numbers to IEC 60027-2 A.2 format
  *  Project Crew™ 1/1/2026
  */
 
