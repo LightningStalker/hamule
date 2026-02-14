@@ -15,6 +15,7 @@ hamule:
 	$(CC) $(CCFLAGS) -o bclod bclod.c $(M)
 	$(CC) $(CCFLAGS) -o dist dist.c $(M)
 	$(CC) $(CCFLAGS) -o elcut elcut.c
+	$(CC) $(CCFLAGS) -o floyd floyd.c
 #	$(CC) $(CCFLAGS) -o formvar formvar.c $(FORM) $(CURSES)
 	$(CC) $(CCFLAGS) -o gainmargin gainmargin.c $(M)
 	$(CC) $(CCFLAGS) -o hb hb.c $(M)
@@ -41,6 +42,7 @@ install:
 	cp ./bclod $(PREFIX)/bin
 	cp ./dist $(PREFIX)/bin
 	cp ./elcut $(PREFIX)/bin
+	cp ./floyd $(PREFIX)/bin
 #	cp ./formvar $(PREFIX)/bin
 	cp ./gainmargin $(PREFIX)/bin
 	cp ./hae4guys $(PREFIX)/bin
@@ -67,6 +69,7 @@ clean:
 	$(RM) bclod
 	$(RM) dist
 	$(RM) elcut
+	$(RM) floyd
 #	$(RM) formvar
 	$(RM) gainmargin
 	$(RM) hae4guys

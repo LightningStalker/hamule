@@ -18,6 +18,7 @@ Just run the program with no arguments and you will get the help screen.
 * bclod.c      - base loading only, not very ideal but much simpler
 * dist         - get geographic distance to other station from A to B
 * elcut.c      - element cutting, a tuning aid to find how much to cut off
+* floyd.c      - generate the pink noise
 * formvar.c    - user interface for entering data into calculators
 * gainmargin.c - critical gain margin calculator for crystal oscillators
 * hae4guys.c   - guy wires calculator for 4 guys
