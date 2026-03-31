@@ -38,7 +38,7 @@ usage(void) {
         "  Example 2: "PROGNAME" -r 456.8 0.05 1.2\n"
         "  Output should be: 3.2510 (distance d)\n"
         );
-          
+
     exit (EXIT_FAILURE);
 }
 
@@ -91,7 +91,7 @@ reverseCalc(float impedance, float r, float k) {
 int main (int argc, char **argv)
 {
     int opt;
-    
+
 #if defined (__GNUC__)
     unsetenv ("LC_ALL");
     setlocale (LC_NUMERIC, "");  // This should give us digit grouping

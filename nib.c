@@ -26,7 +26,7 @@ main(int argc, char ** argv)
                 n /= 0x400L;
                 t++;
             }
-    
+
             if(t && t < 11)
             {
                 printf("%.2Lf%c\n", n, unit[t]);

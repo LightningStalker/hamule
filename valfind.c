@@ -10,7 +10,7 @@
 int main (int argc, char **argv)
 {
     float V, Rone, Rtwo;
-    
+
     if (argc == 3)
     {
         V = atof(argv[1]);
@@ -28,6 +28,6 @@ int main (int argc, char **argv)
         puts("Output should be 669.642883Ω");
         return(1);
     }
-    
+
     return(0);
 }

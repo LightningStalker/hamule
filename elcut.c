@@ -1,4 +1,4 @@
-/* Compile with gcc -Wall -o elcut elcut.c 
+/* Compile with gcc -Wall -o elcut elcut.c
     The Lightning Stalker August 28, 2019 */
 
 #define PROGNAME "elcut"

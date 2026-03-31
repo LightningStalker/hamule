@@ -57,7 +57,7 @@ termios,
 termstateorig,
 *termios_p = &termios,
 *termstateorig_p = &termstateorig;
-    
+
 /* set term input raw, nonblocking */
 void
 termSetup()
@@ -118,13 +118,13 @@ main(int argc, char *argv[])
         d = 0;                          /* no args so infinite loop */
         time = 1;
     }
-#ifdef  DEBUG    
+#ifdef  DEBUG
     fprintf(stderr, "%i, %i\n", time, d);
 #endif
 
     termSetup();                        /* raw nonblocking input */
     init_pink_noise_gen(&osc);          /* bring the noise */
-    
+
     for(cc = 0; cc < time; cc += d)
     {
         for(c = 0; c < 44100; c++)      /* the Joy of division */

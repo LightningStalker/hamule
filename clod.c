@@ -30,7 +30,7 @@ int main (int argc, char **argv)
           den3,
           den4,
           L;
-    
+
     if (argc == 5) // stupid input = stupid output
     { // metric-imperial conversion
         float f = atof(argv[1]);          // frequency in Megahertz
@@ -71,7 +71,7 @@ int main (int argc, char **argv)
               "  Usage: "PROGNAME" frequency(MHz) whip_length(m) coil_position(m) whip_diameter(mm)\n"
               "  Example: "PROGNAME" 7.105 2.2 1.1 5.0\n"
               "  Output should be: 39.606"MUSYM"H\n");
-              
+
         return (1);
     }
 }

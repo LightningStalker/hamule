@@ -45,7 +45,7 @@ main(int argc, char ** argv)
 			     )
 			 )
 		     );
-#else 
+#else
 	gc = sprintf(buf, "%.3f\n",
 		     1 / (
 			 2 * M_PI * sqrt(
