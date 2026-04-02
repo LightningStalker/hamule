@@ -1,6 +1,8 @@
 /* Compile with gcc -Wall -o tanklc tanklc.c -lm
     The Lightning Stalker ~2015 */
 
+#define PROGNAME    "tanklc"
+
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,11 +24,13 @@ int main (int argc, char **argv)
     }
     else
     {
-        puts ("tanklc finds the value of L or C given fres and either L or C.");
-        puts ("output is value in microhenries or microfarads\n");
-        puts ("Usage: tanklc fres(kHz) {L,C}(µH,µF)");
-        puts ("Example: tanklc 300.000 38");
-        puts ("Output should be: 0.007406519");
+        puts ("\n"
+              "  "PROGNAME" finds the value of L or C given fres and either L or C.\n"
+              "  output is value in microhenries or microfarads\n"
+              "\n"
+              "  Usage:   "PROGNAME" fres(kHz) {L,C}(µH,µF)\n"
+              "  Example: "PROGNAME" 300.000 38\n"
+              "  Output should be: 0.007406519\n");
         return (1);
     }
 }

@@ -13,6 +13,7 @@ hamule:
 	$(CC) -o boost boost.c
 	$(CC) $(CCFLAGS) -o clod clod.c $(M)
 	$(CC) $(CCFLAGS) -o bclod bclod.c $(M)
+	$(CC) $(CCFLAGS) -o bucks bucks.c
 	$(CC) $(CCFLAGS) -o dist dist.c $(M)
 	$(CC) $(CCFLAGS) -o elcut elcut.c
 	$(CC) $(CCFLAGS) -o floyd floyd.c
@@ -32,6 +33,7 @@ hamule:
 	$(CC) $(CCFLAGS) -o tankfreq tankfreq.c $(M)
 	$(CC) $(CCFLAGS) -o tanklc tanklc.c $(M)
 	$(CC) $(CCFLAGS) -o valfind valfind.c
+	$(CC) $(CCFLAGS) -o volavg volavg.c $(M)
 	$(CC) $(CCFLAGS) -o zipz zipz.c $(M)
 	$(CC) $(CCFLAGS) -o zout zout.c
 
@@ -40,6 +42,7 @@ install:
 	cp ./boost $(PREFIX)/bin
 	cp ./clod $(PREFIX)/bin
 	cp ./bclod $(PREFIX)/bin
+	cp ./bucks $(PREFIX)/bin
 	cp ./dist $(PREFIX)/bin
 	cp ./elcut $(PREFIX)/bin
 	cp ./floyd $(PREFIX)/bin
@@ -59,6 +62,7 @@ install:
 	cp ./tankfreq $(PREFIX)/bin
 	cp ./tanklc $(PREFIX)/bin
 	cp ./valfind $(PREFIX)/bin
+	cp ./volavg $(PREFIX)/bin
 	cp ./zipz $(PREFIX)/bin
 	cp ./zout $(PREFIX)/bin
 
@@ -67,6 +71,7 @@ clean:
 	$(RM) boost
 	$(RM) clod
 	$(RM) bclod
+	$(RM) bucks
 	$(RM) dist
 	$(RM) elcut
 	$(RM) floyd
@@ -86,6 +91,7 @@ clean:
 	$(RM) tankfreq
 	$(RM) tanklc
 	$(RM) valfind
+	$(RM) volavg
 	$(RM) zipz
 	$(RM) zout
 

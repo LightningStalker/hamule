@@ -50,8 +50,11 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# binaries
 bias
 boost
+bucks
 clod
 bclod
 dist
@@ -74,5 +77,6 @@ seriesw
 tankfreq
 tanklc
 valfind
+volavg
 zipz
 zout

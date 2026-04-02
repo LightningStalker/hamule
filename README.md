@@ -14,6 +14,7 @@ Understanding usage of the programs is easy because they show help automatically
 Just run the program with no arguments and you will get the help screen.
 ### The Calculators
 * boost.c      - boost converters, find L, duty cycle, filter cap, etc.
+* bucks.c      - buck converters, find L, duty cycle, filter cap, and diode current, etc.
 * clod.c       - coil loaded verticals or dipoles, variable coil position, center loded for example
 * bclod.c      - base loading only, not very ideal but much simpler
 * dist         - get geographic distance to other station from A to B
@@ -36,6 +37,7 @@ Just run the program with no arguments and you will get the help screen.
 * tankfreq.c   - calculates LC tank resonant frequency given L and C values
 * tanklc.c     - finds L or C that will produce a specific tank resonance frequency
 * valfind.c    - LM317 resistor divider to obtain a desired output voltage
+* volavg.c     - average volume level for sound card volume adjust
 * zipz.c       - open wire line impedance calculator
 * zout.c       - finds amplifier output impedance using 2 resistors and output voltage
 ### What needs to be done
