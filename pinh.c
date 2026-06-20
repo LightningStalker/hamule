@@ -16,11 +16,10 @@ main(int argc, char ** argv)
     if (argc == 3)
     {
         printf("%.3fmm\n",
-               2e3 * sqrt(atof(argv[2]) * (atof(argv[1]) /
-                                           1e9
-                                           )
-                          )
-               );
+               2e3 * sqrt( atof(argv[2]) * atof(argv[1]) /
+                           1e9
+                         )
+              );
         exit (EXIT_SUCCESS);
     }
     else if (argc == 4 && strcmp(argv[1], "-l") == 0)
@@ -28,10 +27,8 @@ main(int argc, char ** argv)
         printf("%.3fm\n",
                pow(atof(argv[3]) /
                    2e3, 2) /
-               (atof(argv[2]) /
-                1e9
-               )
-               );
+               atof(argv[2]) * 1e9
+              );
         exit (EXIT_SUCCESS);
     }
     else // usage text

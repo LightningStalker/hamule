@@ -1,5 +1,5 @@
 # hamule
-A collection of calculators for amateur radio and electronics
+Some small programs to make your life as a ham/EE a little easy
 ## hamule is HAM calcULators
 Hamule descends from the other great calculator projects like hamcalc. We run it instead from the terminal window or shell command prompt. Modern and up to date functions of the C library make it nice to read and clean the code a little bit. Maybe we make it easier for the estudents to understand.
 

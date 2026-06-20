@@ -38,41 +38,41 @@ main(int argc, char ** argv)
     if (argc == 3)
     {
 #if defined (__GNUC__)
-	printf("%'.3f\n",
-		     1 / (
-			 2 * M_PI * sqrt(
-			     atof(argv[1]) * atof(argv[2]) * 1e-12
-			     )
-			 )
-		     );
+        printf("%'.3f\n",
+                 1 / (
+                 2 * M_PI * sqrt(
+                     atof(argv[1]) * atof(argv[2]) * 1e-12
+                     )
+                 )
+                 );
 #else
-	gc = sprintf(buf, "%.3f\n",
-		     1 / (
-			 2 * M_PI * sqrt(
-			     atof(argv[1]) * atof(argv[2]) * 1e-12
-			     )
-			 )
-		     );
+        gc = sprintf(buf, "%.3f\n",
+                 1 / (
+                 2 * M_PI * sqrt(
+                     atof(argv[1]) * atof(argv[2]) * 1e-12
+                     )
+                 )
+                 );
 
-	gc = gc - 8;                      /* Digit grouping */
-	if (gc > 0)
-	{
-	    do
-	    {
-		gc--;
-		if (gc % 3)
-		    output[c] = buf[lc];  /* Normal digit */
-		else
-		{
-		    output[c] = buf[lc];  /* Digit with  */
-		    c++;
-		    output[c] = dgchar;   /* grouping char */
-		}
-		c++;
-		lc++;
-	    }
-	    while (gc);
-	}
+        gc = gc - 8;                      /* Digit grouping */
+        if (gc > 0)
+        {
+            do
+            {
+            gc--;
+            if (gc % 3)
+                output[c] = buf[lc];  /* Normal digit */
+            else
+            {
+                output[c] = buf[lc];  /* Digit with  */
+                c++;
+                output[c] = dgchar;   /* grouping char */
+            }
+            c++;
+            lc++;
+            }
+            while (gc);
+        }
 
 	strncpy(&output[c], &buf[lc], 40); /* Copy what remains */
 	printf("%s", output);
