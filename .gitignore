@@ -52,6 +52,10 @@ Mkfile.old
 dkms.conf
 
 # binaries
+media/tf.aux
+media/tf.log
+media/tf.pdf
+media/tf.png
 bias
 boost
 bucks

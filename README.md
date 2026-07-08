@@ -13,33 +13,37 @@ Understanding usage of the programs is easy because they show help automatically
 
 Just run the program with no arguments and you will get the help screen.
 ### The Calculators
-* boost.c      - boost converters, find L, duty cycle, filter cap, etc.
-* bucks.c      - buck converters, find L, duty cycle, filter cap, and diode current, etc.
-* clod.c       - coil loaded verticals or dipoles, variable coil position, center loded for example
-* bclod.c      - base loading only, not very ideal but much simpler
-* dist         - get geographic distance to other station from A to B
-* elcut.c      - element cutting, a tuning aid to find how much to cut off
-* floyd.c      - generate the pink noise
-* formvar.c    - user interface for entering data into calculators
-* gainmargin.c - critical gain margin calculator for crystal oscillators
-* hae4guys.c   - guy wires calculator for 4 guys
-* haeguys.c    - guy wires calculator for 3 guys
-* hb.c         - use latitude/longitude of remote station to help point the antenna
-* joules.c     - Joule energy calc
-* lpda.c       - Log-Periodic antenna
-* maids.c      - convert to/from maidenhead locator, needs maidenhead library https://github.com/sp6q/maidenhead see maids.c
-* moxon.c      - Moxon antennas get dimensions
-* nib.c        - Convert the number to MiB, KiB, etc. (IEC 60027-2 A.2)
-* pinh.c       - pinhole cameras calculator
-* rcfilt.c     - RC filter calc
-* salkey.c     - Sallen-Key filter
-* seriesw.c    - potentiometer resistance and wattage, helps reduce the chance of 'pot burnout'
-* tankfreq.c   - calculates LC tank resonant frequency given L and C values
-* tanklc.c     - finds L or C that will produce a specific tank resonance frequency
-* valfind.c    - LM317 resistor divider to obtain a desired output voltage
-* volavg.c     - average volume level for sound card volume adjust
-* zipz.c       - open wire line impedance calculator
-* zout.c       - finds amplifier output impedance using 2 resistors and output voltage
+```
+  boost.c      - boost converters, find L, duty cycle, filter cap, etc.
+  bucks.c      - buck converters, find L, duty cycle, filter cap, and diode current, etc.
+  clod.c       - coil loaded verticals or dipoles, variable coil position, center loded for example
+  bclod.c      - base loading only, not very ideal but much simpler
+  dist         - get geographic distance to other station from A to B
+  elcut.c      - element cutting, a tuning aid to find how much to cut off
+  floyd.c      - generate the pink noise
+  formvar.c    - user interface for entering data into calculators
+  gainmargin.c - critical gain margin calculator for crystal oscillators
+  hae4guys.c   - guy wires calculator for 4 guys
+  haeguys.c    - guy wires calculator for 3 guys
+  hb.c         - use latitude/longitude of remote station to help point the antenna
+  joules.c     - Joule energy calc
+  lpda.c       - Log-Periodic antenna
+  maids.c      - convert to/from maidenhead locator, needs maidenhead library https://github.com/sp6q/maidenhead see maids.c
+  moxon.c      - Moxon antennas get dimensions
+  nib.c        - Convert the number to MiB, KiB, etc. (IEC 60027-2 A.2)
+  pinh.c       - pinhole cameras calculator
+  rcfilt.c     - RC filter calc
+  salkey.c     - Sallen-Key filter
+  seriesw.c    - potentiometer resistance and wattage, helps reduce the chance of 'pot burnout'
+  tankfreq.c   - calculates LC tank resonant frequency given L and C values
+  tanklc.c     - finds L or C that will produce a specific tank resonance frequency
+  valfind.c    - LM317 resistor divider to obtain a desired output voltage
+  volavg.c     - average volume level for sound card volume adjust
+  zipz.c       - open wire line impedance calculator
+  zout.c       - finds amplifier output impedance using 2 resistors and output voltage
+```
 ### What needs to be done
 * Find series and parallel resistor combinations based on an input resistance value
 * Transformer winding calc: how many conductor turns fit through holes in cores
+
+![jpeg image](media/eq.jpg)
