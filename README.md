@@ -46,4 +46,4 @@ Just run the program with no arguments and you will get the help screen.
 * Find series and parallel resistor combinations based on an input resistance value
 * Transformer winding calc: how many conductor turns fit through holes in cores
 
-![jpeg image](media/eq.jpg)
+![jpeg image](media/kunyan.jpg)
