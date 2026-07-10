@@ -1,4 +1,4 @@
-/* Compile with gcc -Wall -o tanklc tanklc.c -lm
+/* Compile with gcc -o tanklc tanklc.c -lm
     The Lightning Stalker ~2015 */
 
 #define PROGNAME    "tanklc"
@@ -78,7 +78,7 @@ int main (int argc, char **argv)
 	exit(EXIT_SUCCESS);
     }else
     {
-        puts ("\n"
+        fputs("\n"
               "  "PROGNAME" finds a value of L or C given resonance frequency (fres) and either\n"
               "    L or C.  If you enter the inductance (L), you get the capacitance (C),\n"
               "    if you enter the capacitance, you get the inductance.\n"
@@ -94,8 +94,11 @@ int main (int argc, char **argv)
               "    And the output should be:\n"
               "    0.007406519 ("MUSYM"F), giving the value for his capacitor.\n"
               "  We can then do \' $ "PROGNAME" 300.0 0.007406519\' and get back the first one\n"
-              "    inductor value of 38 ("MUSYM"H)  (Actual get \'38.000001396\'.  He is very close!)\n"
-             );
+              "    inductor value of 38 ("MUSYM"H)  (Actual get \'38.000001396\'.  He is very close!)\n",
+              stderr);
+#if defined (__GNUC__)
+        putc('\n', stderr);
+#endif
         exit(EXIT_FAILURE);
     }
 }

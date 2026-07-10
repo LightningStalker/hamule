@@ -1,5 +1,7 @@
-/* Compile with gcc -Wall -o joules joules.c -lm
-    The Lightning Stalker 2023/12/14 */
+/* Compile with gcc -o joules joules.c -lm
+ *
+ * Project Crew™ 2023/12/14
+*/
 
 #define PROGNAME "joules"
 
@@ -33,15 +35,17 @@ int main (int argc, char **argv)
     }
     else
     {
-        puts ( \
-            "\n"
-            "  "PROGNAME" is a simple capacitor joule calculator\n"
-            "  output is stored energy in joules\n"
-            "\n"
-            "  Usage: "PROGNAME" microfarads volts\n"
-            "  Example: "PROGNAME" 33 330\n"
-            "  Output should be: 1.797\n"
-             );
+        fputs("\n"
+              "  "PROGNAME" is a simple capacitor joule calculator\n"
+              "  output is stored energy in joules\n"
+              "\n"
+              "  Usage: "PROGNAME" microfarads volts\n"
+              "  Example: "PROGNAME" 33 330\n"
+              "  Output should be: 1.797\n",
+              stderr);
+#if defined (__GNUC__)
+        putc('\n', stderr);
+#endif
         return (1);
     }
 }

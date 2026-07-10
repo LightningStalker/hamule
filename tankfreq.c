@@ -1,4 +1,4 @@
-/* Compile with gcc -Wall -o tankfreq tankfreq.c -lm
+/* Compile with gcc -o tankfreq tankfreq.c -lm
  *  The Lightning Stalker 2014
  */
 
@@ -80,16 +80,18 @@ main(int argc, char ** argv)
 	exit(EXIT_SUCCESS);
     }else
     {
-        puts ( \
-            "\n"
-            "  "PROGNAME" is an LC tank resonance frequency calculator.\n"
-            "  output is frequency in Hz\n"
-            "\n"
-            "  Usage: "PROGNAME" [microfarads] [microhenries]\n"
-            "\n"
-            "  Example: $ "PROGNAME" 3.3 0.86207\n"
-            "  Output should be: 94,360.861\n"
-             );
+        fputs("\n"
+              "  "PROGNAME" is an LC tank resonance frequency calculator.\n"
+              "  output is frequency in Hz\n"
+              "\n"
+              "  Usage: "PROGNAME" [microfarads] [microhenries]\n"
+              "\n"
+              "  Example: $ "PROGNAME" 3.3 0.86207\n"
+              "  Output should be: 94,360.861\n",
+              stderr);
+#if defined (__GNUC__)
+        putc('\n', stderr);
+#endif
         return (EXIT_FAILURE);
     }
     return (EXIT_FAILURE); /* makes tc happy */

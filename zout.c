@@ -1,4 +1,4 @@
-/* Compile with gcc -Wall -o zout zout.c
+/* Compile with gcc -o zout zout.c
     The Lightning Stalker 2022 */
 
 #include <stdio.h>
@@ -18,11 +18,17 @@ int main (int argc, char **argv)
     }
     else
     {
-        puts ("zout is an amplifier output impedance calculator.");
-        puts ("output is impedance in Ohms\n");
-        puts ("Usage: zout resistor1 resistor2 voltage1 voltage2");
-        puts ("Example: zout 10000 1000 4.6 4.4");
-        puts ("Output should be: 50.761421");
+        fputs("\n"
+              "  zout is an amplifier output impedance calculator.\n"
+              "  output is impedance in Ohms\n"
+              "\n"
+              "  Usage: zout resistor1 resistor2 voltage1 voltage2\n"
+              "  Example: zout 10000 1000 4.6 4.4\n"
+              "  Output should be: 50.761421\n"
+              , stderr);
+#if defined (__GNUC__)
+        putc('\n', stderr);
+#endif
         return (1);
     }
 }

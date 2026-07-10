@@ -1,4 +1,4 @@
-/*  Compile with $ gcc -Wall -o bucks bucks.c
+/*  Compile with $ gcc -o bucks bucks.c
  * For Watcom: $ wcl -bcl=$(DEST_OS) -wx -fe=$(EXE_file) bucks.c
  * or use make
  * Buck converter Power State calculator
@@ -11,23 +11,29 @@
 #include <unistd.h>
 #include <ctype.h>
 
+#if defined (__DOS__)
+#define MUSYM   "\xe6"
+#else
+#define MUSYM   "\u00b5"      /* differences of the codepage */
+#endif
+
+
 void
 usage()
 {
-    puts("\n   bucks is a buck converter power state calculator.\n"
-           "   5 output paramaters including inductor value\n"
-           "\n"
-           "   5 position dependent input paramaters from stdin, 1 per line\n"
-           "   scriptable and designed to be used with formvar\n"
-           "   Input: frequency, Vin, Vout, Ioutmax, Voutripple\n"
-#if defined (__DOS__)
-           "   Output: dutyCycle, Iripple, L(\xe6\H), "
-           "minimumOutputCapacitance(\xe6\F), Idiode");
-#else
-           "   Output: dutyCycle, Iripple, L(\u00b5H), "
-           "minimumOutputCapacitance(\u00b5F), Idiode\n");
+    fputs("\n"
+          "   bucks is a buck converter power state calculator.\n"
+          "   5 output paramaters including inductor value\n"
+          "\n"
+          "   5 position dependent input paramaters from stdin, 1 per line\n"
+          "   scriptable and designed to be used with formvar\n"
+          "   Input: frequency, Vin, Vout, Ioutmax, Voutripple\n"
+          "   Output: dutyCycle, Iripple, L("MUSYM"H), "
+          "minimumOutputCapacitance("MUSYM"F), Idiode\n",
+          stderr);
+#if defined (__GNUC__)
+    putc('\n', stderr);
 #endif
-
     exit(EXIT_FAILURE);
 }
 

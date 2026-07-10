@@ -1,4 +1,4 @@
-/* Compile with gcc -Wall -o boost boost.c
+/* Compile with gcc -o boost boost.c
  * Online version:
  *  https://learn.adafruit.com/diy-boost-calc/the-calculator
  * Consult SLVA372 from TI
@@ -13,6 +13,13 @@
         { __auto_type __x = (x); __auto_type __y = (y); \
           __x > __y ? __x : __y; })
 #endif
+
+#if defined (__DOS__)
+#define MUSYM   "\xe6"
+#else
+#define MUSYM   "\u00b5"      /* differences of the codepage */
+#endif
+
 
 int
 main(int argc, char ** argv){
@@ -99,12 +106,18 @@ main(int argc, char ** argv){
                );
         exit(EXIT_SUCCESS);
     } else {
-        puts("boost is a boost converter calculator.");
-        puts("6 output paramaters including inductor value\n");
-        puts("7 position dependent input paramaters from stdin, 1 per line");
-        puts("scriptable and designed to be used with formvar");
-        puts("Input: frequency, Vinmin, Vinmax, Voutmin, Voutmax, Iout, Vripple");
-        puts("Output: minduty, maxduty, L(µH), Ipeak, capacitance(µF), Voutmax");
+        fputs("\n"
+              "  boost is a boost converter calculator.\n"
+              "  6 output paramaters including inductor value\n"
+              "\n"
+              "  7 position dependent input paramaters from stdin, 1 per line\n"
+              "  scriptable and designed to be used with formvar\n"
+              "  Input: frequency, Vinmin, Vinmax, Voutmin, Voutmax, Iout, Vripple\n"
+              "  Output: minduty, maxduty, L("MUSYM"H), Ipeak, capacitance("MUSYM"F), Voutmax\n"
+              , stderr);
+#if defined (__GNUC__)
+        putc('\n', stderr);
+#endif
         exit(EXIT_FAILURE);
     }
 } /* main */

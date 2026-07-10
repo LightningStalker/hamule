@@ -1,4 +1,4 @@
-/* Compile with gcc -Wall -o moxon moxon.c -lm
+/* Compile with gcc -o moxon moxon.c -lm
  * Moxon rectangle
  * https://www.moxonantennaproject.net/design.htm
  * Project Crew™ 9/8/2025
@@ -172,9 +172,11 @@ main(int argc, char ** argv)
               "  D = 0.06917\n"
               "  E = 0.13348\n"
               "\n"
-              "  (https://www.moxonantennaproject.net/design.htm)\n"
-              "\n", stderr);
-
+              "  (https://www.moxonantennaproject.net/design.htm)\n",
+              stderr);
+#if defined (__GNUC__)
+        putc('\n', stderr);
+#endif
         return (EXIT_FAILURE);
     }
 }

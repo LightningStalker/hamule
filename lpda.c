@@ -1,4 +1,4 @@
-/* Compile with gcc -Wall -o lpda lpda.c -lm
+/* Compile with gcc -o lpda lpda.c -lm
  * Log-Periodic antenna
  * Project Crew™ 9/7/2025
  */
@@ -122,8 +122,11 @@ main(int argc, char ** argv)
               "  L4   29.7     45.0\n"
               "  L5   25.0     37.8\n"
               "\n"
-              "  (https://en.wikipedia.org/wiki/Log-periodic_antenna)\n"
-              "\n", stderr);
+              "  (https://en.wikipedia.org/wiki/Log-periodic_antenna)\n",
+              stderr);
+#if defined (__GNUC__)
+        putc('\n', stderr);
+#endif
     }
     return (EXIT_FAILURE);
 }

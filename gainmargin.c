@@ -1,4 +1,4 @@
-/* Compile with gcc -Wall -o gainmargin gainmargin.c -lm
+/* Compile with gcc -o gainmargin gainmargin.c -lm
     From STMicroelectronics AN2867 Rev 20 p.13
     Project Crew 2024 */
 
@@ -49,16 +49,17 @@ int main (int argc, char **argv)
     }
     else
     {
-        puts ( \
-            "\n"
-            "  "PROGNAME" is a critical gain margin calculator for crystal oscillators.\n"
-            "  output is g"SUBM"crit in mA/V\n"
-            "\n"
-            "  Usage: "PROGNAME" shunt_pF load_pF ESR MHz\n"
-            "  Example: "PROGNAME" 5.0 12.0 150.0 12.0\n"
-            "  Output should be: 0.98576mA/V\n"
-            );
-
+        fputs("\n"
+              "  "PROGNAME" is a critical gain margin calculator for crystal oscillators.\n"
+              "  output is g"SUBM"crit in mA/V\n"
+              "\n"
+              "  Usage: "PROGNAME" shunt_pF load_pF ESR MHz\n"
+              "  Example: "PROGNAME" 5.0 12.0 150.0 12.0\n"
+              "  Output should be: 0.98576mA/V\n",
+              stderr);
+#if defined (__GNUC__)
+        putc('\n', stderr);
+#endif
         return (EXIT_FAILURE);
     }
 }

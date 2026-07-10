@@ -1,4 +1,4 @@
-/* Compile with gcc -Wall -o maids maids.c maidenhead.c -lm
+/* Compile with gcc -o maids maids.c maidenhead.c -lm
  * maidenhead library is require https://github.com/sp6q/maidenhead
  * Project Crew™ 9/5/2025
  */
@@ -36,18 +36,22 @@ main(int argc, char ** argv)
             break;
 
         default:
-            puts("\n  maids is a maidenhead locator converter.");
-            puts("  output is either maidenhead gridsquare or lat, long\n");
-
-            puts("  Usage: maids [maidenhead locator]");
-            puts("     or: maids [latitude] [longitude]\n");
-
-            puts("  Example:  $ maids EF17");
-            puts("  Output should be: -32.518924, -97.037847\n");
-
-            puts("  Example:  $ maids -32.518 -97.037");
-            puts("  Output should be: EF17LL\n");
-
+            fputs("\n"
+                  "  maids is a maidenhead locator converter.\n"
+                  "  output is either maidenhead gridsquare or lat, long\n"
+                  "\n"
+                  "  Usage: maids [maidenhead locator]\n"
+                  "     or: maids [latitude] [longitude]\n"
+                  "\n"
+                  "  Example:  $ maids EF17\n"
+                  "  Output should be: -32.518924, -97.037847\n"
+                  "\n"
+                  "  Example:  $ maids -32.518 -97.037\n"
+                  "  Output should be: EF17LL\n",
+                  stderr);
+#if defined (__GNUC__)
+            putc('\n', stderr);
+#endif
             return(EXIT_FAILURE);
             break;
     }

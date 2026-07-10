@@ -1,4 +1,4 @@
-/* Compile with gcc -Wall -o salkey salkey.c -lm
+/* Compile with gcc -o salkey salkey.c -lm
  * sallen key filter cutoff frequency
  * https://en.wikipedia.org/wiki/Sallen–Key_topology
  * Project Crew™ 2024
@@ -73,9 +73,11 @@ main(int argc, char ** argv)
               "  Example:  $ "PROGNAME" 1000.0 0.01\n"
               "  Output should be: 15,915\n"
               "\n"
-              "  (https://en.wikipedia.org/wiki/Sallen–Key_topology)\n"
-              "\n", stderr);
-
+              "  (https://en.wikipedia.org/wiki/Sallen–Key_topology)\n",
+              stderr);
+#if defined (__GNUC__)
+        putc('\n', stderr);
+#endif
         return (EXIT_FAILURE);
     }
 }

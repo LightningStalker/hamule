@@ -1,7 +1,10 @@
 CC = gcc
+STRIP = strip -s
 RM = rm -f
 CCFLAGS = -Os#-Wall
 M = -lm
+SYNO = -fsyntax-only
+
 PREFIX = /usr/local
 FORM = -lform
 CURSES = -lncurses
@@ -9,10 +12,11 @@ CURSES = -lncurses
 all: hamule
 
 hamule:
+# compile
 #	$(CC) $(CCFLAGS) -o bias bias.c $(M)
-	$(CC) -o boost boost.c
-	$(CC) $(CCFLAGS) -o clod clod.c $(M)
 	$(CC) $(CCFLAGS) -o bclod bclod.c $(M)
+	$(CC) $(CCFLAGS) -o clod clod.c $(M)
+	$(CC) $(CCFLAGS) $(SYNO) -o boost boost.c
 	$(CC) $(CCFLAGS) -o bucks bucks.c
 	$(CC) $(CCFLAGS) -o dist dist.c $(M)
 	$(CC) $(CCFLAGS) -o elcut elcut.c
@@ -36,6 +40,32 @@ hamule:
 	$(CC) $(CCFLAGS) -o volavg volavg.c $(M)
 	$(CC) $(CCFLAGS) -o zipz zipz.c $(M)
 	$(CC) $(CCFLAGS) -o zout zout.c
+# strip
+	$(STRIP) bclod
+	$(STRIP) boost
+	$(STRIP) bucks
+	$(STRIP) clod
+	$(STRIP) dist
+	$(STRIP) elcut
+	$(STRIP) floyd
+	$(STRIP) gainmargin
+	$(STRIP) hae4guys
+	$(STRIP) haeguys
+	$(STRIP) hb
+	$(STRIP) joules
+	$(STRIP) lpda
+	$(STRIP) moxon
+	$(STRIP) nib
+	$(STRIP) pinh
+	$(STRIP) rcfilt
+	$(STRIP) salkey
+	$(STRIP) seriesw
+	$(STRIP) tankfreq
+	$(STRIP) tanklc
+	$(STRIP) valfind
+	$(STRIP) volavg
+	$(STRIP) zipz
+	$(STRIP) zout
 
 install:
 #	cp ./bias $(PREFIX)/bin

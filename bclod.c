@@ -1,4 +1,4 @@
-/* Compile with gcc -Wall -o bclod bclod.c -lm
+/* Compile with gcc -o bclod bclod.c -lm
      Base loaded antenna loading coil calculator
      a very small program by The Lightning Stalker  April 14, 2022CE
      Formula sourced ARRL Handbook 2020 Edition Vol. 4. page 21.42 */
@@ -18,7 +18,7 @@
 #if defined (__DOS__)
 #define MUSYM   "\xe6"
 #else
-#define MUSYM   "µ"                 /* differences of the codepage */
+#define MUSYM   "\u00b5"      /* differences of the codepage */
 #endif
 
 
@@ -47,15 +47,17 @@ int main (int argc, char **argv)
     }
     else
     {
-        puts ( \
-                "\n"
-                "  "PROGNAME" is a base loaded antenna loading coil calculator.\n"
-                "  output is coil inductance in microhenries\n"
-                "\n"
-                "  Usage:   "PROGNAME" frequency(MHz) whip_length(m) whip_diameter(mm)\n"
-                "  Example: "PROGNAME" 10.000 1.7 10.0\n"
-                "  Output should be: 12.237"MUSYM"H\n"
-             );
+        fputs("\n"
+              "  "PROGNAME" is a base loaded antenna loading coil calculator.\n"
+              "  output is coil inductance in microhenries\n"
+              "\n"
+              "  Usage:   "PROGNAME" frequency(MHz) whip_length(m) whip_diameter(mm)\n"
+              "  Example: "PROGNAME" 10.000 1.7 10.0\n"
+              "  Output should be: 12.237"MUSYM"H\n",
+              stderr);
+#if defined (__GNUC__)
+        putc('\n', stderr);
+#endif
         return (1);
     }
 }

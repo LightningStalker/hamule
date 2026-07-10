@@ -39,7 +39,7 @@ main(int argc, char ** argv)
             }
         }else
         {
-            puts("nib: ERROR: input out of range");
+            fputs("nib: ERROR: input out of range\n", stderr);
             exit(EXIT_FAILURE);
         }
 
@@ -63,7 +63,6 @@ main(int argc, char ** argv)
 #if defined (__GNUC__)
         putc('\n', stderr);
 #endif
-
         exit(EXIT_FAILURE);
     }
     return(EXIT_SUCCESS);  /* some cc generate warning without it */

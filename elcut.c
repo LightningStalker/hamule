@@ -1,4 +1,4 @@
-/* Compile with gcc -Wall -o elcut elcut.c
+/* Compile with gcc -o elcut elcut.c
     The Lightning Stalker August 28, 2019 */
 
 #define PROGNAME "elcut"
@@ -15,7 +15,7 @@ int main (int argc, char **argv)
     }
     else
     {
-        puts ("\n"
+        fputs("\n"
               "  "PROGNAME" is a resonant antenna tuning aid.\n"
               "  "PROGNAME" finds the length to cut based on the current and desired frequency.\n"
               "\n"
@@ -24,7 +24,11 @@ int main (int argc, char **argv)
               "\n"
               "  Usage: "PROGNAME" freq_desired freq_current length_current\n"
               "  Example: "PROGNAME" 28.33 25.55 2516\n"
-              "  Output should be: 246.893046\n");
+              "  Output should be: 246.893046\n",
+              stderr);
+#if defined (__GNUC__)
+        putc('\n', stderr);
+#endif
         return (1);
     }
 }

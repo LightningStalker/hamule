@@ -1,4 +1,5 @@
-/* generate the pink noise
+/* Compile with gcc -o floyd floyd.c
+ * generate the pink noise
  * depend: Tom Merchant's Voss-McCartney pink-noise approximation algorithm:
  * (https://gist.github.com/tom-merchant/5ced03a0638b06138ee7d11c0c209aa4)
  *
@@ -22,32 +23,31 @@
 void
 usage()
 {
-    fputs(
-        "\n"
-        "  "PROGNAME" is a pink noise generator who is borrowing Tom Merchant's\n"
-        "    Voss-McCartney pink-noise approximation algorithm.\n"
-        "\n"
-        "  Output is raw FLOAT_LE (32-bit) sample.\n"
-        "\n"
-        "  Usage:  $ "PROGNAME" [SECONDS] [redirect/pipe]\n"
-        "\n"
-        "  Example: "PROGNAME" 3 > sndfile.raw\n"
-        "\n"
-        "  Output should be 3 seconds of the pink noise (for samplerate = 44100s/sec).\n"
-        "\n"
-        "  If you run " PROGNAME" without args, he will keep going.\n"
-        "  You can press a key to stop the " PROGNAME".\n"
-        "  That mean you can do something like:\n"
-        "\n"
-        "    $ " PROGNAME" | aplay -f FLOAT_LE -r 44100\n"
-        "\n"
-        "    and get the noise for a while.\n"
-        "\n"
-        "  (http://en.wikipedia.org/Pink_Noise)\n"
-        "  Project Crew™ 2026\n",
-        stderr);
+    fputs("\n"
+          "  "PROGNAME" is a pink noise generator who is borrowing Tom Merchant's\n"
+          "    Voss-McCartney pink-noise approximation algorithm.\n"
+          "\n"
+          "  Output is raw FLOAT_LE (32-bit) sample.\n"
+          "\n"
+          "  Usage:  $ "PROGNAME" [SECONDS] [redirect/pipe]\n"
+          "\n"
+          "  Example: "PROGNAME" 3 > sndfile.raw\n"
+          "\n"
+          "  Output should be 3 seconds of the pink noise (for samplerate = 44100s/sec).\n"
+          "\n"
+          "  If you run " PROGNAME" without args, he will keep going.\n"
+          "  You can press a key to stop the " PROGNAME".\n"
+          "  That mean you can do something like:\n"
+          "\n"
+          "    $ " PROGNAME" | aplay -f FLOAT_LE -r 44100\n"
+          "\n"
+          "    and get the noise for a while.\n"
+          "\n"
+          "  (http://en.wikipedia.org/Pink_Noise)\n"
+          "  Project Crew™ 2026\n",
+          stderr);
 #if defined (__GNUC__)
-        putc('\n', stderr);
+    putc('\n', stderr);
 #endif
 }
 

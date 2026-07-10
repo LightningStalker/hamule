@@ -1,4 +1,5 @@
-/* average volume of the audio
+/* Compile with gcc -o volavg volavg.c -lm
+ * average volume of the audio
  * Project Crew™ 3/16/2026
  */
 
@@ -30,9 +31,11 @@ usage()
           "\n"
           "  Output stream of "PROGNAME" will show 2 numbers every line.  First one is the\n"
           "    RMS average of about 50ms samples block (44100sample/second).  The second\n"
-          "    one is averaging them for about 6 seconds.  No decibel calculation is\n"
-          "    perform.  Use Ctrl+C to quit.\n"
-          "\n", stderr);
+          "    one is averaging them for about 6 seconds.  No decibel calculation is\n",
+          stderr);
+#if defined (__GNUC__)
+    putc('\n', stderr);
+#endif
     exit(EXIT_FAILURE);
 }
 

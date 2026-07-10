@@ -1,11 +1,18 @@
-/*
+/* Compile with gcc -o valfind valfind.c
+ *
  * Find resistor values for LM317 using various criteria
  * The Lightning Stalker 2014
  */
 
-#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+#if defined (__DOS__)
+#define OMEGA   "\xea"
+#else
+#define OMEGA   "\u2126"                     /* differences of the codepage */
+#endif
+
 
 int main (int argc, char **argv)
 {
@@ -16,16 +23,23 @@ int main (int argc, char **argv)
         V = atof(argv[1]);
         Rtwo = atof(argv[2]);
         Rone = Rtwo / (((V - (Rtwo * 0.0001)) / 1.25) - 1);
-        printf("R1 shall be %fΩ\n", Rone);
+        printf("R1 shall be %f"OMEGA"\n", Rone);
     }
     else
     {
-        puts("valfind is an LM317 resistor calculator.\n");
-        puts("Usage: valfind Vout R2");
-        puts("Where Vout is the desired output voltage and");
-        puts("R2 is the desired resistance of R2.\n");
-        puts("Example: valfind 4.2 1500");
-        puts("Output should be 669.642883Ω");
+        fputs("\n"
+              "  valfind is an LM317 resistor calculator.\n"
+              "\n"
+              "  Usage: valfind Vout R2\n"
+              "  Where Vout is the desired output voltage and\n"
+              "  R2 is the desired resistance of R2.\n"
+              "\n"
+              "  Example: valfind 4.2 1500\n"
+              "  Output should be 669.642883"OMEGA"\n",
+              stderr);
+#if defined (__GNUC__)
+        putc('\n', stderr);
+#endif
         return(1);
     }
 

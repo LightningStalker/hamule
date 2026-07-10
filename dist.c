@@ -1,4 +1,4 @@
-/* Compile with gcc -Wall -o dist dist.c -lm
+/* Compile with gcc -o dist dist.c -lm
  * Distance from A to B
  * Project Crew™ 9/24/2025
  * Thanks you (https://www.movable-type.co.uk/scripts/latlong.html)
@@ -119,9 +119,11 @@ main(int argc, char ** argv)
               "\n"
               "  Example:  $ "PROGNAME" 32.715 -117.1625  34.69 135.502  (San Diego, US - Osaka, JP)\n"
               "\n"
-              "  Output should be: 9360.033 (km)\n"
-              "\n", stderr);
-
+              "  Output should be: 9360.033 (km)\n",
+              stderr);
+#if defined (__GNUC__)
+        putc('\n', stderr);
+#endif
         return (EXIT_FAILURE);
     }
 }

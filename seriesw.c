@@ -1,4 +1,4 @@
-/* compile with "gcc -Wall -oseriesw seriesw.c -lm"
+/* compile with "gcc -oseriesw seriesw.c -lm"
  *
  * Steps through possible pot settings and finds the wattage dissipated
  * by the pot and a series resistor.
@@ -8,6 +8,13 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+#if defined (__DOS__)
+#define OMEGA   "\xea"
+#else
+#define OMEGA   "\u2126"                     /* differences of the codepage */
+#endif
+
 
 int main (int argc, char **argv)
 {
@@ -24,20 +31,26 @@ int main (int argc, char **argv)
             wres = pow (v / (rpot + rres), 2) * rres;
             if (wpot > wppeak) wppeak = wpot;
             if (wres > wrpeak) wrpeak = wres;
-            printf("R2 = %1.4fΩ R1 = %1.4fW R2 = %1.4fW\n", rpot, wres, wpot);
+            printf("R2 = %1.4f"OMEGA" R1 = %1.4fW R2 = %1.4fW\n", rpot, wres, wpot);
         }
         puts("done.");
         printf("R1 peaked at %1.4fW, R2 peaked at %1.4fW\n", wrpeak, wppeak);
     }
     else
     {
-        puts("seriesw finds wattages dissipated by a pot and series resistor.\n");
-        puts("Usage: seriesw R1 R2 V");
-        puts("R1 = Fixed Resistor Value");
-        puts("R2 = Potentiometer Maximum Resistance");
-        puts("V  = Appied Voltage");
-        puts("Example: seriesw 4.7 50 1.25");
-        puts("Output should end with: R1 peaked at 0.3324W, R2 peaked at 0.0831W");
+        fputs("\n"
+              "  seriesw finds wattages dissipated by a pot and series resistor.\n"
+              "\n"
+              "  Usage: seriesw R1 R2 V\n"
+              "  R1 = Fixed Resistor Value\n"
+              "  R2 = Potentiometer Maximum Resistance\n"
+              "  V  = Appied Voltage\n"
+              "  Example: seriesw 4.7 50 1.25\n"
+              "  Output should end with: R1 peaked at 0.3324W, R2 peaked at 0.0831W\n",
+              stderr);
+#if defined (__GNUC__)
+        putc('\n', stderr);
+#endif
         return(1);
     }
 

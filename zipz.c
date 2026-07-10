@@ -1,4 +1,4 @@
-/* Compile with gcc -Wall -o zipz zipz.c -lm
+/* Compile with gcc -o zipz zipz.c -lm
     The Lightning Stalker 2024 */
 
 #define PROGNAME "zipz"
@@ -14,31 +14,32 @@
 #if defined (__DOS__)
 #define OMEGA   "\xea"
 #else
-#define OMEGA   "Ω"                     /* differences of the codepage */
+#define OMEGA   "\u2126"                /* differences of the codepage */
 #endif
 
 
 void
 usage(void) {
-    puts ( \
-        "\n"
-        "  "PROGNAME" calculates the impedance of open wire line and zip cord\n"
-        "  and reverse calculation of conductor spacing\n"
-        "  output is impedance in Ohms\n"
-        "\n"
-        "  Usage: "PROGNAME" distance radius k\n"
-        "     or: "PROGNAME" -r impedance radius k\n"
-        "  Distance is distance between centers of conductors\n"
-        "  Radius is radius of one conductor\n"
-        "  k is relative permittivity in region between conductors\n"
-        "\n"
-        "  Example 1: "PROGNAME" 35.5 1.25 1.0\n"
-        "  Output should be: 401.1("OMEGA")\n"
-        "\n"
-        "  Example 2: "PROGNAME" -r 456.8 0.05 1.2\n"
-        "  Output should be: 3.2510 (distance d)\n"
-        );
-
+    fputs("\n"
+          "  "PROGNAME" calculates the impedance of open wire line and zip cord\n"
+          "  and reverse calculation of conductor spacing\n"
+          "  output is impedance in Ohms\n"
+          "\n"
+          "  Usage: "PROGNAME" distance radius k\n"
+          "     or: "PROGNAME" -r impedance radius k\n"
+          "  Distance is distance between centers of conductors\n"
+          "  Radius is radius of one conductor\n"
+          "  k is relative permittivity in region between conductors\n"
+          "\n"
+          "  Example 1: "PROGNAME" 35.5 1.25 1.0\n"
+          "  Output should be: 401.1("OMEGA")\n"
+          "\n"
+          "  Example 2: "PROGNAME" -r 456.8 0.05 1.2\n"
+          "  Output should be: 3.2510 (distance d)\n",
+          stderr);
+#if defined (__GNUC__)
+    putc('\n', stderr);
+#endif
     exit (EXIT_FAILURE);
 }
 

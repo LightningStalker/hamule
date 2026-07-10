@@ -1,4 +1,4 @@
-/* Compile with gcc -Wall -o hb hb.c -lm
+/* Compile with gcc -o hb hb.c -lm
  * Heading/Bearing between 2 points
  * Project Crew™ 9/20/2025
  * Thanks you (https://www.movable-type.co.uk/scripts/latlong.html)
@@ -108,9 +108,11 @@ main(int argc, char ** argv)
               "\n"
               "  Example:  $ "PROGNAME" 32.715 -117.1625  34.69 135.502  (San Diego, USA - Osaka, JP)\n"
               "\n"
-              "  Output should be: 307.9111 (degrees "DEGSYM")\n"
-              "\n", stderr);
-
+              "  Output should be: 307.9111 (degrees "DEGSYM")\n",
+              stderr);
+#if defined (__GNUC__)
+        putc('\n', stderr);
+#endif
         return (EXIT_FAILURE);
     }
 }

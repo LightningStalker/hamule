@@ -1,4 +1,4 @@
-/* Compile with gcc -Wall -o haeguys haeguys.c -lm
+/* Compile with gcc -o haeguys haeguys.c -lm
  * 3 Guy Wires
  *  Project Crew 6/25/2025
  */
@@ -66,7 +66,6 @@ main(int argc, char ** argv)
 #if defined (__GNUC__)
         putc('\n', stderr);
 #endif
-
         exit(EXIT_FAILURE);
     }
     return(EXIT_SUCCESS);  /* some cc generate warning without it */
