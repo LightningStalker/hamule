@@ -43,13 +43,13 @@ int main (int argc, char **argv)
         printf ("%'.9f\n",
             pow(1 /
             atof(argv[1]) / (2 * M_PI), 2) /
-            atof(argv[2]) * 1e6
+            atof(argv[2]) * 1e12
             );
 #else
         gc = sprintf (buf, "%.9f\n",
             pow(1 /
             atof(argv[1]) / (2 * M_PI), 2) /
-            atof(argv[2]) * 1e6
+            atof(argv[2]) * 1e12
             );
 
         gc = gc - 14;                  /* Digit grouping */

@@ -36,26 +36,25 @@ main(int argc, char ** argv)
         R = atof(argv[1]);
         C = atof(argv[2]);
 
-        R = R * R;
-        C = C * C * 1e-12;
+        C *= 1e-6;
 
 #if defined (__GNUC__)
         printf("%'.0f\n", \
                round(
                    1 /
-                   ( 2 * M_PI * sqrt(R * C) )
+                   ( 2 * M_PI * R * C )
                    )
               );
 #elif defined (__WATCOMC__)
         printf("%.0f\n", \
                    1 /
-                   ( 2 * M_PI * sqrt(R * C) )
+                   ( 2 * M_PI * R * C )
               );
 #else
         printf("%.0f\n", \
                round(
                    1 /
-                   ( 2 * M_PI * sqrt(R * C) )
+                   ( 2 * M_PI * R * C )
                    )
               );
 #endif

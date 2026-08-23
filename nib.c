@@ -58,7 +58,7 @@ main(int argc, char ** argv)
               "\n"
               "  Example: "PROGNAME" 11477\n"
               "\n"
-              "  Output should be: 11.21Ki\n",
+              "  Output should be: 11.21K\n",
               stderr);
 #if defined (__GNUC__)
         putc('\n', stderr);
