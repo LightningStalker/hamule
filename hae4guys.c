@@ -25,23 +25,23 @@ main(int argc, char ** argv)
 #if defined (__WATCOMC__)
             double height              = atof(argv[1]),
                    /* convert to radians */
-                   angle               = M_PI / (180.0 / atof(argv[2])),
+                   angle               = M_PI * atof(argv[2]) / 180.0,
                    /* law of sines */
                    guyl                = height / sin(angle),
                    /* pythagorean theorem */
-                   circumscribedCircle = sqrt(pow(guyl, 2.0) - pow(height, 2.0)),
+                   circumscribedCircle = sqrt(pow(guyl, 2) - pow(height, 2)),
                    /* ... again */
-                   side                = sqrt(pow(circumscribedCircle * 2.0, 2.0) / 2.0);
+                   side                = sqrt(2) * circumscribedCircle;
 #elif defined (__GNUC__)
             double height              = atof(argv[1]),
                    /* convert to radians */
-                   angle               = M_PI / (180.0 / atof(argv[2])),
+                   angle               = M_PI * atof(argv[2]) / 180.0,
                    /* law of sines */
                    guyl                = height / sinf(angle),
                    /* pythagorean theorem */
                    circumscribedCircle = sqrtf(powf(guyl, 2.0) - powf(height, 2.0)),
                    /* ... again */
-                   side                = sqrtf(powf(circumscribedCircle * 2.0, 2.0) / 2.0);
+                   side                = sqrtf(2.0) * circumscribedCircle;
 #endif
 
             printf("%.3f  (length of each guy wire) total (x4) = %.3f\n", guyl, guyl * 4);

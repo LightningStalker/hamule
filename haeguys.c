@@ -25,7 +25,7 @@ main(int argc, char ** argv)
 #if defined (__WATCOMC__)
             double height              = atof(argv[1]),
                    /* convert to radians */
-                   angle               = M_PI / (180 / atof(argv[2])),
+                   angle               = M_PI * atof(argv[2]) / 180.0,
                    /* law of sines */
                    guyl                = height / sin(angle),
                    /* pythagorean theorem */
@@ -35,7 +35,7 @@ main(int argc, char ** argv)
 #elif defined (__GNUC__)
             double height              = atof(argv[1]),
                    /* convert to radians */
-                   angle               = M_PI / (180.0 / atof(argv[2])),
+                   angle               = M_PI * atof(argv[2]) / 180.0,
                    /* law of sines */
                    guyl                = height / sinf(angle),
                    /* pythagorean theorem */
