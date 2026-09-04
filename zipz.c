@@ -67,22 +67,16 @@ reverseCalc(float impedance, float r, float k) {
     printf("%.4f\n",
         r *
         pow(10,
-            impedance /
-            (
-                276 /
-                sqrt(k)
-            )
+            sqrt(k) * impedance /
+            276
         )
     );
 #elif defined (__GNUC__)
     printf("%'.4f\n",
         r *
         powf(10,
-            impedance /
-            (
-                276 /
-                sqrtf(k)
-            )
+            sqrtf(k) * impedance /
+            276
         )
     );
 #endif

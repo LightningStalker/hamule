@@ -22,20 +22,20 @@ int main (int argc, char **argv)
     {
         V = atof(argv[1]);
         Rtwo = atof(argv[2]);
-        Rone = Rtwo / (((V - (Rtwo * 0.0001)) / 1.25) - 1);
-        printf("R1 shall be %f"OMEGA"\n", Rone);
+        Rone = Rtwo / (0.8 * (V - 1e-4 * Rtwo) - 1);
+        printf("R1 shall be %.3f"OMEGA"\n", Rone);
     }
     else
     {
         fputs("\n"
-              "  valfind is an LM317 resistor calculator.\n"
+              "  valfind is an LM317 (and similar) resistor calculator.\n"
               "\n"
               "  Usage: valfind Vout R2\n"
               "  Where Vout is the desired output voltage and\n"
               "  R2 is the desired resistance of R2.\n"
               "\n"
               "  Example: valfind 4.2 1500\n"
-              "  Output should be 669.642883"OMEGA"\n",
+              "  Output should be 669.643"OMEGA"\n",
               stderr);
 #if defined (__GNUC__)
         putc('\n', stderr);

@@ -39,20 +39,18 @@ main(int argc, char ** argv)
     {
 #if defined (__GNUC__)
         printf("%'.3f\n",
-                 1 / (
-                 2 * M_PI * sqrt(
-                     atof(argv[1]) * atof(argv[2]) * 1e-12
-                     )
-                 )
-                 );
+                     1 /
+                     (
+                      2 * M_PI * sqrt( atof(argv[1]) * atof(argv[2]) )
+                     ) * 1e6
+              );
 #else
         gc = sprintf(buf, "%.3f\n",
-                 1 / (
-                 2 * M_PI * sqrt(
-                     atof(argv[1]) * atof(argv[2]) * 1e-12
-                     )
-                 )
-                 );
+                     1 /
+                     (
+                      2 * M_PI * sqrt( atof(argv[1]) * atof(argv[2]) )
+                     ) * 1e6
+                    );
 
         gc = gc - 8;                      /* Digit grouping */
         if (gc > 0)

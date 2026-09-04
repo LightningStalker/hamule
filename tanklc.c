@@ -41,16 +41,20 @@ int main (int argc, char **argv)
     {
 #if defined (__GNUC__)
         printf ("%'.9f\n",
-            pow(1 /
-            atof(argv[1]) / (2 * M_PI), 2) /
-            atof(argv[2]) * 1e12
-            );
+                           25e10 /
+                           (
+                            powf(M_PI, 2.0) * atof(argv[2]) *
+                            powf(atof(argv[1]), 2.0)
+                           )
+               );
 #else
         gc = sprintf (buf, "%.9f\n",
-            pow(1 /
-            atof(argv[1]) / (2 * M_PI), 2) /
-            atof(argv[2]) * 1e12
-            );
+                           25e10 /
+                           (
+                            pow(M_PI, 2.0) * atof(argv[2]) *
+                            pow(atof(argv[1]), 2.0)
+                           )
+                     );
 
         gc = gc - 14;                  /* Digit grouping */
         if (gc > 0)
@@ -83,22 +87,23 @@ int main (int argc, char **argv)
               "    L or C.  If you enter the inductance (L), you get the capacitance (C),\n"
               "    if you enter the capacitance, you get the inductance.\n"
               "\n"
-              "  For fres in the Hz,  L/C values are the millihenries and microfarads.\n"
-              "  For fres in the kHz,        ...         microhenries and microfarads.\n"
-              "  For fres in the MHz,        ...         microhenries and picofarads.\n"
+              "  For fres in the Hz,  L/C values are the microhenries and microfarads.\n"
+              "  For fres in the kHz,        ...         microhenries and picofarads.\n"
               "\n"
-              "  Usage: "PROGNAME" fres(Hz, kHz, MHz) {L || C}( mH || "MUSYM"F, "MUSYM"H || "MUSYM"F, "MUSYM"H || pF )\n"
-              "  Example: We have a fres in the kHz,\n"
+              "  Usage: "PROGNAME" fres(Hz, kHz) {L || C}( "MUSYM"H || "MUSYM"F, "MUSYM"H || pF )\n"
+              "  Example: We want the resonance frequency of kHz,\n"
               "    so for 300.0kHz and a 38"MUSYM"H inductor, the command line will be:\n"
               "     $ "PROGNAME" 300.000 38\n"
               "    And the output should be:\n"
-              "    0.007406519 ("MUSYM"F), giving the value for his capacitor.\n"
-              "  We can then do \' $ "PROGNAME" 300.0 0.007406519\' and get back the first one\n"
-              "    inductor value of 38 ("MUSYM"H)  (Actual get \'38.000001396\'.  He is very close!)\n",
+              "    7,406.51... (pF), giving the value for his capacitor.\n"
+              "  We can then do \' $ "PROGNAME" 300 7406.519\' and get back the first one\n"
+              "    inductor value of 38 ("MUSYM"H)  (Actual get \'37.999998842\' (it might vary a\n"
+              "    little on the different platforms)  He is very close!)\n",
               stderr);
 #if defined (__GNUC__)
         putc('\n', stderr);
 #endif
         exit(EXIT_FAILURE);
     }
+    return (EXIT_SUCCESS);
 }

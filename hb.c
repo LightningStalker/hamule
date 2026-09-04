@@ -26,7 +26,7 @@
 float
 toRadians(float deg)
 {
-    return deg / (180.0 / M_PI);
+    return M_PI * deg / 180.0;
 }
 
 /* get compass direction of initial bearing */
