@@ -14,6 +14,7 @@ Understanding usage of the programs is easy because they show help automatically
 Just run the program with no arguments and you will get the help screen.
 ### The Calculators
 ```
+  bclod.c      - base loaded vertical
   boost.c      - boost converters, find L, duty cycle, filter cap, etc.
   bucks.c      - buck converters, find L, duty cycle, filter cap, and diode current, etc.
   clod.c       - coil loaded verticals or dipoles, variable coil position, center loded for example

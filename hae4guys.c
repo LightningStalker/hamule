@@ -41,7 +41,7 @@ main(int argc, char ** argv)
                    /* pythagorean theorem */
                    circumscribedCircle = sqrtf(powf(guyl, 2.0) - powf(height, 2.0)),
                    /* ... again */
-                   side                = sqrtf(2.0) * circumscribedCircle;
+                   side                = M_SQRT2 * circumscribedCircle;
 #endif
 
             printf("%.3f  (length of each guy wire) total (x4) = %.3f\n", guyl, guyl * 4);
