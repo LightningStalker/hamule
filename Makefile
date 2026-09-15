@@ -1,45 +1,46 @@
-CC = gcc
-STRIP = strip -s
-RM = rm -f
+CC      = gcc
+STRIP   = strip -s
+RM      = rm -f
 CCFLAGS = -Os#-Wall
-M = -lm
-SYNO = -fsyntax-only
+M       = -lm
+SYNO    = -fsyntax-only
 
-PREFIX = /usr/local
-FORM = -lform
-CURSES = -lncurses
+SRCDIR  = src/
+PREFIX  = /usr/local
+FORM    = -lform
+CURSES  = -lncurses
 
 all: hamule
 
 hamule:
 # compile
-#	$(CC) $(CCFLAGS) -o bias bias.c $(M)
-	$(CC) $(CCFLAGS) -o bclod bclod.c $(M)
-	$(CC) $(CCFLAGS) -o clod clod.c $(M)
-	$(CC) $(CCFLAGS) $(SYNO) -o boost boost.c
-	$(CC) $(CCFLAGS) -o bucks bucks.c
-	$(CC) $(CCFLAGS) -o dist dist.c $(M)
-	$(CC) $(CCFLAGS) -o elcut elcut.c
-	$(CC) $(CCFLAGS) -o floyd floyd.c
+#	$(CC) $(CCFLAGS) -o bias ${SRCDIR}bias.c $(M)
+	$(CC) $(CCFLAGS) -o bclod ${SRCDIR}bclod.c $(M)
+	$(CC) $(CCFLAGS) -o clod ${SRCDIR}clod.c $(M)
+	$(CC) $(CCFLAGS) $(SYNO) -o boost ${SRCDIR}boost.c
+	$(CC) $(CCFLAGS) -o bucks ${SRCDIR}bucks.c
+	$(CC) $(CCFLAGS) -o dist ${SRCDIR}dist.c $(M)
+	$(CC) $(CCFLAGS) -o elcut ${SRCDIR}elcut.c
+	$(CC) $(CCFLAGS) -o floyd ${SRCDIR}floyd.c
 #	$(CC) $(CCFLAGS) -o formvar formvar.c $(FORM) $(CURSES)
-	$(CC) $(CCFLAGS) -o gainmargin gainmargin.c $(M)
-	$(CC) $(CCFLAGS) -o hb hb.c $(M)
-	$(CC) $(CCFLAGS) -o hae4guys hae4guys.c $(M)
-	$(CC) $(CCFLAGS) -o haeguys haeguys.c $(M)
-	$(CC) $(CCFLAGS) -o joules joules.c $(M)
-	$(CC) $(CCFLAGS) -o lpda lpda.c $(M)
-	$(CC) $(CCFLAGS) -o moxon moxon.c $(M)
-	$(CC) $(CCFLAGS) -o nib nib.c $(M)
-	$(CC) $(CCFLAGS) -o pinh pinh.c $(M)
-	$(CC) $(CCFLAGS) -o rcfilt rcfilt.c $(M)
-	$(CC) $(CCFLAGS) -o seriesw seriesw.c $(M)
-	$(CC) $(CCFLAGS) -o salkey salkey.c $(M)
-	$(CC) $(CCFLAGS) -o tankfreq tankfreq.c $(M)
-	$(CC) $(CCFLAGS) -o tanklc tanklc.c $(M)
-	$(CC) $(CCFLAGS) -o valfind valfind.c
-	$(CC) $(CCFLAGS) -o volavg volavg.c $(M)
-	$(CC) $(CCFLAGS) -o zipz zipz.c $(M)
-	$(CC) $(CCFLAGS) -o zout zout.c
+	$(CC) $(CCFLAGS) -o gainmargin ${SRCDIR}gainmargin.c $(M)
+	$(CC) $(CCFLAGS) -o hb ${SRCDIR}hb.c $(M)
+	$(CC) $(CCFLAGS) -o hae4guys ${SRCDIR}hae4guys.c $(M)
+	$(CC) $(CCFLAGS) -o haeguys ${SRCDIR}haeguys.c $(M)
+	$(CC) $(CCFLAGS) -o joules ${SRCDIR}joules.c $(M)
+	$(CC) $(CCFLAGS) -o lpda ${SRCDIR}lpda.c $(M)
+	$(CC) $(CCFLAGS) -o moxon ${SRCDIR}moxon.c $(M)
+	$(CC) $(CCFLAGS) -o nib ${SRCDIR}nib.c $(M)
+	$(CC) $(CCFLAGS) -o pinh ${SRCDIR}pinh.c $(M)
+	$(CC) $(CCFLAGS) -o rcfilt ${SRCDIR}rcfilt.c $(M)
+	$(CC) $(CCFLAGS) -o seriesw ${SRCDIR}seriesw.c $(M)
+	$(CC) $(CCFLAGS) -o salkey ${SRCDIR}salkey.c $(M)
+	$(CC) $(CCFLAGS) -o tankfreq ${SRCDIR}tankfreq.c $(M)
+	$(CC) $(CCFLAGS) -o tanklc ${SRCDIR}tanklc.c $(M)
+	$(CC) $(CCFLAGS) -o valfind ${SRCDIR}valfind.c
+	$(CC) $(CCFLAGS) -o volavg ${SRCDIR}volavg.c $(M)
+	$(CC) $(CCFLAGS) -o zipz ${SRCDIR}zipz.c $(M)
+	$(CC) $(CCFLAGS) -o zout ${SRCDIR}zout.c
 # strip
 	$(STRIP) bclod
 	$(STRIP) boost
