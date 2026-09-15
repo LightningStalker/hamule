@@ -1,0 +1,32 @@
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\pagestyle{empty}
+\openup -1pt
+\newcount\wh\wh=15
+\newcount\bump\bump=\wh \advance\bump by 5
+\begin{document}
+	
+	
+	\begin{center}
+		{\LARGE Base Loaded antenna capacitance} \bigbreak
+		\bigbreak
+	
+	$ C = \frac{55.78h}{[(den1) \times (den2)]} $ \medbreak
+	\end{center}
+
+	\hspace{\wh mm} where
+	
+	\halign
+	{\quad \hspace{\bump mm} # \hfil & # \hfil \cr
+ 		& $ (den1) = \ln(\frac{h}{r}) - 1 $ \cr
+		& $ (den2) = [1 - (\frac{fh}{75}) ^ 2] $ \cr
+		& ln = natural logarathm \cr
+		& \enspace $ C $ is capacitance, $ f $ is frequency, $ h $ is height \cr
+		& without coil in meters, and $ r $ is wire radius in \cr
+		& meters. \cr
+	}
+
+\end{document}
+
