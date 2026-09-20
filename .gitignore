@@ -56,11 +56,12 @@ dkms.conf
 *.dvi
 *.log
 *.pdf
+bclod
 bias
 boost
 bucks
 clod
-bclod
+dilu
 dist
 elcut
 floyd
@@ -78,6 +79,7 @@ pinh
 rcfilt
 salkey
 seriesw
+simp
 sums.asck
 tankfreq
 tanklc

@@ -3,7 +3,7 @@ STRIP   = strip -s
 RM      = rm -f
 CCFLAGS = -Os#-Wall
 M       = -lm
-SYNO    = -fsyntax-only
+WNUR    = -Wno-unused-result
 
 SRCDIR  = src/
 PREFIX  = /usr/local
@@ -14,11 +14,12 @@ all: hamule
 
 hamule:
 # compile
-#	$(CC) $(CCFLAGS) -o bias ${SRCDIR}bias.c $(M)
 	$(CC) $(CCFLAGS) -o bclod ${SRCDIR}bclod.c $(M)
-	$(CC) $(CCFLAGS) -o clod ${SRCDIR}clod.c $(M)
-	$(CC) $(CCFLAGS) $(SYNO) -o boost ${SRCDIR}boost.c
+#	$(CC) $(CCFLAGS) -o bias ${SRCDIR}bias.c $(M)
+	$(CC) $(CCFLAGS) $(WNUR) -o boost ${SRCDIR}boost.c
 	$(CC) $(CCFLAGS) -o bucks ${SRCDIR}bucks.c
+	$(CC) $(CCFLAGS) -o clod ${SRCDIR}clod.c $(M)
+	$(CC) $(CCFLAGS) -o dilu ${SRCDIR}dilu.c $(M)
 	$(CC) $(CCFLAGS) -o dist ${SRCDIR}dist.c $(M)
 	$(CC) $(CCFLAGS) -o elcut ${SRCDIR}elcut.c
 	$(CC) $(CCFLAGS) -o floyd ${SRCDIR}floyd.c
@@ -33,8 +34,9 @@ hamule:
 	$(CC) $(CCFLAGS) -o nib ${SRCDIR}nib.c $(M)
 	$(CC) $(CCFLAGS) -o pinh ${SRCDIR}pinh.c $(M)
 	$(CC) $(CCFLAGS) -o rcfilt ${SRCDIR}rcfilt.c $(M)
-	$(CC) $(CCFLAGS) -o seriesw ${SRCDIR}seriesw.c $(M)
 	$(CC) $(CCFLAGS) -o salkey ${SRCDIR}salkey.c $(M)
+	$(CC) $(CCFLAGS) -o seriesw ${SRCDIR}seriesw.c $(M)
+	$(CC) $(CCFLAGS) -o simp ${SRCDIR}simp.c
 	$(CC) $(CCFLAGS) -o tankfreq ${SRCDIR}tankfreq.c $(M)
 	$(CC) $(CCFLAGS) -o tanklc ${SRCDIR}tanklc.c $(M)
 	$(CC) $(CCFLAGS) -o valfind ${SRCDIR}valfind.c
@@ -46,6 +48,7 @@ hamule:
 	$(STRIP) boost
 	$(STRIP) bucks
 	$(STRIP) clod
+	$(STRIP) dilu
 	$(STRIP) dist
 	$(STRIP) elcut
 	$(STRIP) floyd
@@ -61,6 +64,7 @@ hamule:
 	$(STRIP) rcfilt
 	$(STRIP) salkey
 	$(STRIP) seriesw
+	$(STRIP) simp
 	$(STRIP) tankfreq
 	$(STRIP) tanklc
 	$(STRIP) valfind
@@ -70,10 +74,11 @@ hamule:
 
 install:
 #	cp ./bias $(PREFIX)/bin
-	cp ./boost $(PREFIX)/bin
-	cp ./clod $(PREFIX)/bin
 	cp ./bclod $(PREFIX)/bin
+	cp ./boost $(PREFIX)/bin
 	cp ./bucks $(PREFIX)/bin
+	cp ./clod $(PREFIX)/bin
+	cp ./dilu $(PREFIX)/bin
 	cp ./dist $(PREFIX)/bin
 	cp ./elcut $(PREFIX)/bin
 	cp ./floyd $(PREFIX)/bin
@@ -88,8 +93,9 @@ install:
 	cp ./nib $(PREFIX)/bin
 	cp ./pinh $(PREFIX)/bin
 	cp ./rcfilt $(PREFIX)/bin
-	cp ./seriesw $(PREFIX)/bin
 	cp ./salkey $(PREFIX)/bin
+	cp ./seriesw $(PREFIX)/bin
+	cp ./simp $(PREFIX)/bin
 	cp ./tankfreq $(PREFIX)/bin
 	cp ./tanklc $(PREFIX)/bin
 	cp ./valfind $(PREFIX)/bin
@@ -99,10 +105,11 @@ install:
 
 clean:
 #	$(RM) bias
-	$(RM) boost
-	$(RM) clod
 	$(RM) bclod
+	$(RM) boost
 	$(RM) bucks
+	$(RM) clod
+	$(RM) dilu
 	$(RM) dist
 	$(RM) elcut
 	$(RM) floyd
@@ -117,8 +124,9 @@ clean:
 	$(RM) nib
 	$(RM) pinh
 	$(RM) rcfilt
-	$(RM) seriesw
 	$(RM) salkey
+	$(RM) seriesw
+	$(RM) simp
 	$(RM) tankfreq
 	$(RM) tanklc
 	$(RM) valfind
