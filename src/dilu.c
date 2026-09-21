@@ -21,9 +21,16 @@ lround(double d) {
 }
 
 void
-usage()
+errdec()
 {
     puts("\nMust be decimal numbers.  Units don't matter.");
+    exit(EXIT_FAILURE);
+}
+
+void
+err100()
+{
+    puts("\nThis cant be >100%.");
     exit(EXIT_FAILURE);
 }
 
@@ -70,9 +77,9 @@ getfl()
         //printf("%#.2x\n", strg[t]);
         if(isdigit(strg[t])) {}          /* it has to be numbers */
         else if(strg[t] == '.') dotcnt++;     /* or '.' */
-        else usage();
+        else errdec();
     }
-    if(dotcnt > 1) usage();
+    if(dotcnt > 1) errdec();
     return strtod(strg, NULL);
 }
 
@@ -99,10 +106,12 @@ main (int argc, const char * argv[])
     /*--get user input */
     printf("Initial %% concentration........: ");
     cInit = getfl();
+    if(cInit > 100) err100();
     printf("Start volume or volume to fill.: ");
     vDis  = getfl();
     printf("Target  %% concentration........: ");
     cTarg = getfl();
+    if(cTarg > 100) err100();
 
     /* "Math" */
     if(cInit >= cTarg)
@@ -117,7 +126,8 @@ main (int argc, const char * argv[])
 #else
         num1 = round(cTarg * 100.0);
 #endif
-        den1 = 1e4;
+        den1 = 1e4 - num1;
+        printf("%i, %i", num1, den1);
         ngcf = gcf(num1, den1);
         num2 = num1 / ngcf;
         den2 = den1 / ngcf;
