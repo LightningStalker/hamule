@@ -127,7 +127,6 @@ main (int argc, const char * argv[])
         num1 = round(cTarg * 100.0);
 #endif
         den1 = 1e4 - num1;
-        printf("%i, %i", num1, den1);
         ngcf = gcf(num1, den1);
         num2 = num1 / ngcf;
         den2 = den1 / ngcf;
