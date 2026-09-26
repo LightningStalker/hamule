@@ -1,14 +1,14 @@
-# hamule
-Some small programs to make your life as a ham/EE a little easy
-## hamule is HAM calcULators
-Hamule descends from the other great calculator projects like hamcalc. We run it instead from the terminal window or shell command prompt. Modern and up to date functions of the C library make it nice to read and clean the code a little bit. Maybe we make it easier for the estudents to understand.
+# Ham Calculators aka. hamule
+Some small programs to make your life as a ham/EE/etc. a little easy
+## the story
+Hamule descends from the other great calculator projects like hamcalc. The name hamule is short for hamulator. It means 'ham calculator' but he can be used for more than just ham radio. Unlike the 'hamcalc', we run it instead from the terminal window or shell command prompt. Modern and up to date functions of the C library make it nice to read and clean the code a little bit. Maybe we make it easier for the estudents to understand.
 
 There is a tendency lately to have online calculators for most things. This is good from the standpoint of online availability and they will work in most web browsers. Some of them however do not have world readable code which can be a problem in terms of second hand verifiability of their algorithms. Even those that do will usually use javascript and it can be difficult to find where exactly that code is and what exactly it is doing. There is an argument to be made for the relative privacy of offline 'number crunching'. The Internet may at times be unreliable or web servers or even entire portions of the Internet have become temporarily unavailable more than once. This goes along with a whole host of other issues best left for another discussion another day. For these reasons and others I cannot begin to comprehend, I propose a suite of native compilable CLI calculator programs writen in the C language. CLI because nearly all computer systems, including the so-caled 'legacy' systems, if you like to fool around with that stuff, have one. C because, well I know C, but also because it allows self contained headerless code which makes examination by persons unfarmiliar with the specific application suite relatively easy. In other words you hopefully can better trust the results of the calculation because you can see the algorithm producing them. There is also less opportunity for mistakes than entering them manually into a calculator. This is why even some relatively simple ones have been included.
-![jpeg image](media/bug.png)
+
 ### Shell Scripting
 The design for shell to chain them together and pipe between programs was there from the start. We make the example in maidhb.sh for you to see how it can convert from the maidenhead square to WGS84 lat/long to be use in 'hb' to find the compass heading. This way the output of one program can take as the input to other ones. We make them shell scripting friendly.
 
-### Compile and run
+### Compile and run             ![jpeg image](media/bug.png)
 Cloning the repo and issuing the  $ make in the directory will build it for you most of the programs. Maidenhead converter 'maids.c' will need the library, see below.
 
 Understanding usage of the programs is easy because they show help automatically.
@@ -16,7 +16,7 @@ Understanding usage of the programs is easy because they show help automatically
 Just run the program with no arguments and you will get the help screen.
 ### The Calculators
 ```
-  bclod.c      - base loaded vertical
+  bclod.c      - the base loaded vertical antennas
   boost.c      - boost converters, find L, duty cycle, filter cap, etc.
   bucks.c      - buck converters, find L, duty cycle, filter cap, and diode current, etc.
   clod.c       - coil loaded verticals or dipoles, variable coil position, center loded for example

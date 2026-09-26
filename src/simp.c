@@ -23,7 +23,7 @@ usage()
 void
 theGoodEnding()
 {
-    puts("\n\nNo input, exiting...");
+    puts("\nNo input, exiting...");
     exit(EXIT_SUCCESS);
 }
 
@@ -65,7 +65,7 @@ main (int argc, const char * argv[])
         theGoodEnding();                /* NO_VALUE */
     }
     len = strlen(strg) - sizeof "\n";  /* cr/lf nope throway */
-    if(len == 0)
+    if(len > 0)
     {
         theGoodEnding();
     }else if(isdigit(strg[0]))
