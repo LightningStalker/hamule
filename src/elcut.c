@@ -23,7 +23,7 @@ int main (int argc, char **argv)
               "  remember the output is theoretical and subtract from it to avoid mistuning.\n"
               "\n"
               "  Usage: "PROGNAME" freq_desired freq_current length_current\n"
-              "  Example: "PROGNAME" 28.33 25.55 2516\n"
+              "  Example:  $ "PROGNAME" 28.33 25.55 2516\n"
               "  Output should be: 246.893046\n",
               stderr);
 #if defined (__GNUC__)

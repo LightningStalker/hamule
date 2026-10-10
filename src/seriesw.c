@@ -5,6 +5,8 @@
  * - by The Lightning Stalker 2014
  */
 
+#define PROGNAME    "seriesw"
+
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -39,13 +41,13 @@ int main (int argc, char **argv)
     else
     {
         fputs("\n"
-              "  seriesw finds wattages dissipated by a pot and series resistor.\n"
+              "  "PROGNAME" finds wattages dissipated by a pot and series resistor.\n"
               "\n"
-              "  Usage: seriesw R1 R2 V\n"
+              "  Usage: "PROGNAME" R1 R2 V\n"
               "  R1 = Fixed Resistor Value\n"
               "  R2 = Potentiometer Maximum Resistance\n"
               "  V  = Appied Voltage\n"
-              "  Example: seriesw 4.7 50 1.25\n"
+              "  Example:  $ "PROGNAME" 4.7 50 1.25\n"
               "  Output should end with: R1 peaked at 0.3324W, R2 peaked at 0.0831W\n",
               stderr);
 #if defined (__GNUC__)

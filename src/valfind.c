@@ -4,6 +4,8 @@
  * The Lightning Stalker 2014
  */
 
+#define PROGNAME "valfind"
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -28,13 +30,13 @@ int main (int argc, char **argv)
     else
     {
         fputs("\n"
-              "  valfind is an LM317 (and similar) resistor calculator.\n"
+              "  "PROGNAME" is an LM317 (and similar) resistor calculator.\n"
               "\n"
-              "  Usage: valfind Vout R2\n"
+              "  Usage: "PROGNAME" Vout R2\n"
               "  Where Vout is the desired output voltage and\n"
               "  R2 is the desired resistance of R2.\n"
               "\n"
-              "  Example: valfind 4.2 1500\n"
+              "  Example:  $ "PROGNAME" 4.2 1500\n"
               "  Output should be 669.643"OMEGA"\n",
               stderr);
 #if defined (__GNUC__)

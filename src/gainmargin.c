@@ -54,7 +54,7 @@ int main (int argc, char **argv)
               "  output is g"SUBM"crit in mA/V\n"
               "\n"
               "  Usage: "PROGNAME" shunt_pF load_pF ESR MHz\n"
-              "  Example: "PROGNAME" 5.0 12.0 150.0 12.0\n"
+              "  Example:  $ "PROGNAME" 5.0 12.0 150.0 12.0\n"
               "  Output should be: 0.98576mA/V\n",
               stderr);
 #if defined (__GNUC__)

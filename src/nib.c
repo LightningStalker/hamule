@@ -54,9 +54,9 @@ main(int argc, char ** argv)
               "\n"
               "  note: Very large numbers will convert to the exponential notation.\n"
               "\n"
-              "  Usage:  $ "PROGNAME" [some number]\n"
+              "  Usage: "PROGNAME" [some number]\n"
               "\n"
-              "  Example: "PROGNAME" 11477\n"
+              "  Example:  $ "PROGNAME" 11477\n"
               "\n"
               "  Output should be: 11.21K\n",
               stderr);

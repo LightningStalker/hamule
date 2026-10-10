@@ -84,7 +84,7 @@ main(int argc, char ** argv)
               "\n"
               "  Usage: "PROGNAME" [microfarads] [microhenries]\n"
               "\n"
-              "  Example: $ "PROGNAME" 3.3 0.86207\n"
+              "  Example:  $ "PROGNAME" 3.3 0.86207\n"
               "  Output should be: 94,360.861\n",
               stderr);
 #if defined (__GNUC__)

@@ -40,7 +40,7 @@ int main (int argc, char **argv)
               "  output is stored energy in joules\n"
               "\n"
               "  Usage: "PROGNAME" microfarads volts\n"
-              "  Example: "PROGNAME" 33 330\n"
+              "  Example:  $ "PROGNAME" 33 330\n"
               "  Output should be: 1.797\n",
               stderr);
 #if defined (__GNUC__)

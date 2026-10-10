@@ -57,9 +57,9 @@ main(int argc, char ** argv)
               "  "PROGNAME" is a guy wire setup calculator.\n"
               "  it is unit agnostic and meant for 3 guy wires\n"
               "\n"
-              "  Usage:  $ "PROGNAME" [height of mast hold point] [desired angle in degrees]\n"
+              "  Usage: "PROGNAME" [height of mast hold point] [desired angle in degrees]\n"
               "\n"
-              "  Example: "PROGNAME" 16 45\n"
+              "  Example:  $ "PROGNAME" 16 45\n"
               "\n"
               "  Output should be: 22.627, 16.000, and 27.713\n",
               stderr);

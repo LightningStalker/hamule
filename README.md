@@ -20,6 +20,7 @@ Just run the program with no arguments and you will get the help screen.
   boost.c      - boost converters, find L, duty cycle, filter cap, etc.
   bucks.c      - buck converters, find L, duty cycle, filter cap, and diode current, etc.
   clod.c       - coil loaded verticals or dipoles, variable coil position, center loded for example
+  ctor.c       - toroid capacitance
   dilu.c       - dilution
   dist         - get geographic distance to other station from A to B
   elcut.c      - element cutting, a tuning aid to find how much to cut off

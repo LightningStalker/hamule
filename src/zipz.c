@@ -31,10 +31,10 @@ usage(void) {
           "  Radius is radius of one conductor\n"
           "  k is relative permittivity in region between conductors\n"
           "\n"
-          "  Example 1: "PROGNAME" 35.5 1.25 1.0\n"
+          "  Example 1:  $ "PROGNAME" 35.5 1.25 1.0\n"
           "  Output should be: 401.1("OMEGA")\n"
           "\n"
-          "  Example 2: "PROGNAME" -r 456.8 0.05 1.2\n"
+          "  Example 2:  $ "PROGNAME" -r 456.8 0.05 1.2\n"
           "  Output should be: 3.2510 (distance d)\n",
           stderr);
 #if defined (__GNUC__)

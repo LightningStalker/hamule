@@ -52,7 +52,7 @@ int main (int argc, char **argv)
               "  output is coil inductance in microhenries\n"
               "\n"
               "  Usage:   "PROGNAME" frequency(MHz) whip_length(m) whip_diameter(mm)\n"
-              "  Example: "PROGNAME" 10.000 1.7 10.0\n"
+              "  Example:  $ "PROGNAME" 10.000 1.7 10.0\n"
               "  Output should be: 12.237"MUSYM"H\n",
               stderr);
 #if defined (__GNUC__)

@@ -19,6 +19,7 @@ all: bclod \
      boost \
      bucks \
      clod \
+     ctor \
      dilu \
      dist \
      elcut \
@@ -57,6 +58,10 @@ bucks: bucks.c
 
 clod: clod.c
 	$(CC) $(CFLAGS) -o $@ $^ $(M)
+	$(STRIP) $@
+
+ctor: ctor.c
+	$(CC) $(CFLAGS) -o $@ $^
 	$(STRIP) $@
 
 dilu: dilu.c
@@ -162,6 +167,7 @@ clean:
 	$(RM) boost
 	$(RM) bucks
 	$(RM) clod
+	$(RM) ctor
 	$(RM) dilu
 	$(RM) dist
 	$(RM) elcut
