@@ -7,6 +7,7 @@
  * Thanks you Nathan Souper and Ava Gardeau
  */
 
+#include "func.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -21,24 +22,10 @@ lround(double d) {
 }
 
 void
-errdec()
-{
-    puts("\nMust be decimal numbers.  Units don't matter.");
-    exit(EXIT_FAILURE);
-}
-
-void
 err100()
 {
     puts("\nThis cant be >100%.");
     exit(EXIT_FAILURE);
-}
-
-void
-sExit()
-{
-    puts("\n\nNo input, exiting...");
-    exit(EXIT_SUCCESS);
 }
 
 /* gcf function - return Greatest Common Factor of two numbers */
@@ -57,31 +44,6 @@ gcf(int n, int m)
     return gcf;
 }
 /* end gcf function */
-
-/* get a floating pinout number */
-float
-getfl()
-{
-    static const short int crlf = sizeof "\n";
-    char strg[40];
-    size_t len;
-    short int t, dotcnt = 0;
-
-    if(fgets(strg, 40, stdin) == NULL)  /* process input */
-    {
-        sExit();                /* NO_VALUE */
-    }
-    len = strlen(strg) - crlf;
-    for(t = 0, dotcnt = 0; t <= len; t++)
-    {
-        //printf("%#.2x\n", strg[t]);
-        if(isdigit(strg[t])) {}          /* it has to be numbers */
-        else if(strg[t] == '.') dotcnt++;     /* or '.' */
-        else errdec();
-    }
-    if(dotcnt > 1) errdec();
-    return strtod(strg, NULL);
-}
 
 
 int

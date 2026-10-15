@@ -64,7 +64,7 @@ ctor: ctor.c
 	$(CC) $(CFLAGS) -o $@ $^
 	$(STRIP) $@
 
-dilu: dilu.c
+dilu: dilu.c func.c
 	$(CC) $(CFLAGS) -o $@ $^ $(M)
 	$(STRIP) $@
 
