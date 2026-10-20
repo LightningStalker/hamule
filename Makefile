@@ -14,6 +14,7 @@ INSTALLOPT := -o 0 -g 0 -m 755
 XARGSOPT   := -0 -I {}
 
 vpath %.c src
+vpath %.h src
 
 all: bclod \
      boost \
@@ -64,7 +65,7 @@ ctor: ctor.c
 	$(CC) $(CFLAGS) -o $@ $^
 	$(STRIP) $@
 
-dilu: dilu.c func.c
+dilu: dilu.c func.c func.h
 	$(CC) $(CFLAGS) -o $@ $^ $(M)
 	$(STRIP) $@
 
