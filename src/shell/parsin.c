@@ -7,8 +7,14 @@
 #define PROGNAME    "parsin"
 #define PROJ        "hamule"
 
+#include "define.h"
 #include "parsin.h"
+
+#include "joules.h"
+#include "pinh.h"
+#include "seriesw.h"
 #include "tankfreq.h"
+#include "tanklc.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -107,7 +113,19 @@ main(int argc, char *argv[])
             {
                 switch(res->nr)
                 {
-                    case 23 : tankfreq(acnt, avec);
+                    case 13 : joules(acnt, avec);
+                              break;
+
+                    case 17 : pinh(acnt, avec);
+                              break;
+
+                    case 20 : seriesw(acnt, avec);
+                              break;
+
+                    case 22 : tankfreq(acnt, avec);
+                              break;
+
+                    case 23 : tanklc(acnt, avec);
                               break;
 
                     case 99 : free(strg);

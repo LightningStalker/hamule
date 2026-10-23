@@ -1,3 +1,6 @@
+/*  The Lightning Stalker 2014
+ */
+
 #include "tankfreq.h"
 #include <math.h>
 #include <stdio.h>
@@ -28,9 +31,7 @@ tankfreq(int argc, char ** argv)
                 "  Example:  $ %s 3.3 0.86207\n"
                 "  Output should be: 94360.861\n",
                 progname, progname, progname);
-#if defined (__GNUC__)
         putc('\n', stderr);
-#endif
         return (EXIT_FAILURE);
     }
     return (EXIT_FAILURE); /* makes tc happy */
