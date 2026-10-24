@@ -42,11 +42,11 @@ pinh(int argc, char ** argv)
               "     or: "PROGNAME" -l wavelength(nm) diameter(mm)\n"
               "\n"
               "  550nm is good rule of thumb for the visible spectrum.\n"
-              "  Example:  $ "PROGNAME" 413.000 0.95\n"
+              "  Example:  # "PROGNAME" 413.000 0.95\n"
               "  Output should be: 1.253mm\n"
               "\n"
               "  If you discover a hole, -l will give its focal length in meters\n"
-              "  Like so:  $ "PROGNAME" -l 568.000 3.3705\n"
+              "  Like so:  # "PROGNAME" -l 568.000 3.3705\n"
               "  Output should be: 5.000m\n",
               stderr);
         putc('\n', stderr);

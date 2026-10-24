@@ -76,7 +76,7 @@ main(int argc, char *argv[])
     int     //t,
             acnt;
     char   *strg = NULL;
-    size_t  alocsz;
+    size_t  alocsz = 0;
     ssize_t len;
     struct calc key;
     struct calc *res;
@@ -128,15 +128,18 @@ main(int argc, char *argv[])
                     case 23 : tanklc(acnt, avec);
                               break;
 
-                    case 99 : free(strg);
-                              exit(EXIT_SUCCESS);
+                    case 98 : showhelp();              // '?'
                               break;
 
-                    case 98 : showhelp();
+                    case 99 : free(strg);              // "exit"
+                              exit(EXIT_SUCCESS);
                               break;
 
                     default : printf("calc [%s] not done yet\n", res->name);
                 }
+            }else
+            {
+                printf("\'%s\' not!found\n", avec[0]);
             }
         }
 

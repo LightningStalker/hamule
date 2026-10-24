@@ -41,7 +41,7 @@ int seriesw (int argc, char **argv)
               "  R1 = Fixed Resistor Value\n"
               "  R2 = Potentiometer Maximum Resistance\n"
               "  V  = Appied Voltage\n"
-              "  Example:  $ "PROGNAME" 4.7 50 1.25\n"
+              "  Example:  # "PROGNAME" 4.7 50 1.25\n"
               "  Output should end with: R1 peaked at 0.3324W, R2 peaked at 0.0831W\n",
               stderr);
         putc('\n', stderr);

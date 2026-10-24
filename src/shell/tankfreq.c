@@ -28,7 +28,7 @@ tankfreq(int argc, char ** argv)
                 "\n"
                 "  Usage: %s [microfarads] [microhenries]\n"
                 "\n"
-                "  Example:  $ %s 3.3 0.86207\n"
+                "  Example:  # %s 3.3 0.86207\n"
                 "  Output should be: 94360.861\n",
                 progname, progname, progname);
         putc('\n', stderr);

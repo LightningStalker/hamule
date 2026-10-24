@@ -34,10 +34,10 @@ int tanklc (int argc, char **argv)
               "  Usage: "PROGNAME" fres(Hz, kHz) {L || C}( "MUSYM"H || "MUSYM"F, "MUSYM"H || pF )\n"
               "  Example: We want the resonance frequency of kHz,\n"
               "    so for 300.0kHz and a 38"MUSYM"H inductor, the command line will be:\n"
-              "     $ "PROGNAME" 300.000 38\n"
+              "     # "PROGNAME" 300.000 38\n"
               "    And the output should be:\n"
               "    7406.51... (pF), giving the value for his capacitor.\n"
-              "  We can then do \' $ "PROGNAME" 300 7406.519\' and get back the first one\n"
+              "  We can then do \' # "PROGNAME" 300 7406.519\' and get back the first one\n"
               "    inductor value of 38 ("MUSYM"H)  (Actual get \'37.999998842\' (it might vary a\n"
               "    little on the different platforms)  He is very close!)\n",
               stderr);
