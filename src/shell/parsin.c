@@ -7,17 +7,41 @@
 #define PROGNAME    "parsin"
 #define PROJ        "hamule"
 
-#include "define.h"
-#include "parsin.h"
+#include <math.h>
 
+#include "parsin.h"
+#include "define.h"
+#include "func.h"
+
+#include "bclod.h"
+#include "boost.h"
+#include "bucks.h"
+#include "clod.h"
+#include "ctor.h"
+#include "dilu.h"
+#include "dist.h"
+#include "elcut.h"
+#include "gainmargin.h"
+#include "hae4guys.h"
+#include "haeguys.h"
+#include "hb.h"
 #include "joules.h"
+#include "lpda.h"
+#include "moxon.h"
+#include "nib.h"
 #include "pinh.h"
+#include "rcfilt.h"
+#include "salkey.h"
 #include "seriesw.h"
+#include "simp.h"
 #include "tankfreq.h"
 #include "tanklc.h"
+#include "valfind.h"
+#include "zipz.h"
+#include "zout.h"
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 #include <string.h>
 
 #define LF  10
@@ -113,19 +137,82 @@ main(int argc, char *argv[])
             {
                 switch(res->nr)
                 {
+                    case 1  : bclod(acnt, avec);
+                              break;
+
+                    case 2  : boost(acnt, avec);
+                              break;
+
+                    case 3  : bucks(acnt, avec);
+                              break;
+
+                    case 4  : clod(acnt, avec);
+                              break;
+
+                    case 5  : ctor(acnt, avec);
+                              break;
+
+                    case 6  : dilu(acnt, avec);
+                              break;
+
+                    case 7  : dist(acnt, avec);
+                              break;
+
+                    case 8  : elcut(acnt, avec);
+                              break;
+
+                    case 9  : gainmargin(acnt, avec);
+                              break;
+
+                    case 10 : hae4guys(acnt, avec);
+                              break;
+
+                    case 11 : haeguys(acnt, avec);
+                              break;
+
+                    case 12 : hb(acnt, avec);
+                              break;
+
                     case 13 : joules(acnt, avec);
+                              break;
+
+                    case 14 : lpda(acnt, avec);
+                              break;
+
+                    case 15 : moxon(acnt, avec);
+                              break;
+
+                    case 16 : nib(acnt, avec);
                               break;
 
                     case 17 : pinh(acnt, avec);
                               break;
 
+                    case 18 : rcfilt(acnt, avec);
+                              break;
+
+                    case 19 : salkey(acnt, avec);
+                              break;
+
                     case 20 : seriesw(acnt, avec);
+                              break;
+
+                    case 21 : simp(acnt, avec);
                               break;
 
                     case 22 : tankfreq(acnt, avec);
                               break;
 
                     case 23 : tanklc(acnt, avec);
+                              break;
+
+                    case 24 : valfind(acnt, avec);
+                              break;
+
+                    case 25 : zipz(acnt, avec);
+                              break;
+
+                    case 26 : zout(acnt, avec);
                               break;
 
                     case 98 : showhelp();              // '?'

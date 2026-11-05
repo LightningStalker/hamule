@@ -1,5 +1,4 @@
-/* Compile with gcc -o lpda lpda.c -lm
- * Log-Periodic antenna
+/* Log-Periodic antenna
  * Project Crew™ 9/7/2025
  */
 
@@ -18,7 +17,7 @@
 #if defined (__DOS__)
 #define TAU   "\xe7"
 #else
-#define TAU   "τ"                     /* differences of the codepage */
+#define TAU   "\03c4"                   /* differences of the codepage */
 #endif
 
 

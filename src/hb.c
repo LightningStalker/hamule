@@ -19,7 +19,7 @@
 #if defined (__DOS__)
 #define DEGSYM   "\xf8"
 #else
-#define DEGSYM   "°"                     /* differences of the codepage */
+#define DEGSYM   "\u00b0"               /* differences of the codepage */
 #endif
 
 

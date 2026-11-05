@@ -8,6 +8,9 @@ There is a tendency lately to have online calculators for most things. This is g
 ### Shell Scripting
 The design for shell to chain them together and pipe between programs was there from the start. We make the example in maidhb.sh for you to see how it can convert from the maidenhead square to WGS84 lat/long to be use in 'hb' to find the compass heading. This way the output of one program can take as the input to other ones. We make them shell scripting friendly.
 
+### Shell Version
+hamule can be run inside his own shell. See src/shell directory for more detail.
+
 ### Compile and run             ![jpeg image](media/bug.png)
 Cloning the repo and issuing the  $ make in the directory will build it for you most of the programs. Maidenhead converter 'maids.c' will need the library, see below.
 

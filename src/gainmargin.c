@@ -18,7 +18,7 @@
 #if defined (__DOS__)
 #define SUBM   "(m)"
 #else
-#define SUBM   "ₘ"                     /* differences of the codepage */
+#define SUBM   "\u2098"                 /* differences of the codepage */
 #endif
 
 

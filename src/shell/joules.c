@@ -3,6 +3,7 @@
 
 #define PROGNAME "joules"
 
+#include "joules.h"
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>

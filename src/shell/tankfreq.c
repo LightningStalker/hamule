@@ -1,6 +1,8 @@
 /*  The Lightning Stalker 2014
  */
 
+#define PROGNAME    "tankfreq"
+
 #include "tankfreq.h"
 #include <math.h>
 #include <stdio.h>
@@ -10,8 +12,6 @@
 int
 tankfreq(int argc, char ** argv)
 {
-    char progname[] = "tankfreq";
-    
     if (argc == 3)
     {
         printf("%'.3f\n",
@@ -22,17 +22,19 @@ tankfreq(int argc, char ** argv)
               );
     }else
     {
-        fprintf(stderr, "\n"
-                "  %s is an LC tank resonance frequency calculator.\n"
-                "  output is frequency in Hz\n"
-                "\n"
-                "  Usage: %s [microfarads] [microhenries]\n"
-                "\n"
-                "  Example:  # %s 3.3 0.86207\n"
-                "  Output should be: 94360.861\n",
-                progname, progname, progname);
+        fputs("\n"
+              "  "PROGNAME" is an LC tank resonance frequency calculator.\n"
+              "  output is frequency in Hz\n"
+              "\n"
+              "  Usage: "PROGNAME" [microfarads] [microhenries]\n"
+              "\n"
+              "  Example:  $ "PROGNAME" 3.3 0.86207\n"
+              "  Output should be: 94,360.861\n",
+              stderr);
         putc('\n', stderr);
         return (EXIT_FAILURE);
     }
     return (EXIT_FAILURE); /* makes tc happy */
 }
+
+#undef  PROGNAME

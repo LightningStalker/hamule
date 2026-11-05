@@ -158,9 +158,14 @@ zout: zout.c
 	$(STRIP) $@
 
 
+shell:
+	cd src/shell && $(MAKE)
+
+
 install:
 	$(FIND) $(FINDOPT) | $(XARGS) $(XARGSOPT) $(INSTALL) \
 	$(INSTALLOPT) {} $(PREFIX)/bin
+
 
 clean:
 #	$(RM) bias
@@ -193,5 +198,6 @@ clean:
 	$(RM) volavg
 	$(RM) zipz
 	$(RM) zout
+	cd src/shell && $(MAKE)
 
 distclean: clean

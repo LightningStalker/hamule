@@ -1,7 +1,0 @@
-all:
-	cd src/shell && $(MAKE)
-
-clean:
-	cd src/shell && $(MAKE) $@
-
-distclean: clean
