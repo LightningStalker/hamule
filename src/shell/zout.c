@@ -25,12 +25,10 @@ int zout (int argc, char **argv)
               "  output is impedance in Ohms\n"
               "\n"
               "  Usage: "PROGNAME" resistor1 resistor2 voltage1 voltage2\n"
-              "  Example:  $ "PROGNAME" 10000 1000 4.6 4.4\n"
+              "  Example:  # "PROGNAME" 10000 1000 4.6 4.4\n"
               "  Output should be: 50.761421\n"
+              "\n"
               , stderr);
-#if defined (__GNUC__)
-        putc('\n', stderr);
-#endif
         return (EXIT_FAILURE);
     }
 }

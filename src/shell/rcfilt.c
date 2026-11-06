@@ -51,15 +51,13 @@ int rcfilt (int argc, char **argv)
               "  param{1, 2} are two known parameters such as cutoff frequency and ohms or\n"
               "        ohms and microfarads. rcfilt will find the missing third parameter.\n"
               "\n"
-              "  Example 1:  $ "PROGNAME" 15000 0.01   (resistance and microfarads)\n"
+              "  Example 1:  # "PROGNAME" 15000 0.01   (resistance and microfarads)\n"
               "  Output should be: 1,061.032954    (cutoff frequency)\n"
               "\n"
-              "  Example 2:  $ "PROGNAME" 1061.33 15000   (desired cutoff frequency(Hz) and ohms)\n"
-              "  Output should be: 0.009997           (capacitance in microfarads)\n",
+              "  Example 2:  # "PROGNAME" 1061.33 15000   (desired cutoff frequency(Hz) and ohms)\n"
+              "  Output should be: 0.009997           (capacitance in microfarads)\n"
+              "\n",
               stderr);
-#if defined (__GNUC__)
-        putc('\n', stderr);
-#endif
         return (EXIT_FAILURE);
     }
 }

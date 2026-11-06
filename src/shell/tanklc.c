@@ -12,11 +12,16 @@ int tanklc (int argc, char **argv)
 {
     if (argc == 3)
     {
-        printf ("%'.9f\n",
+        printf ("%.9f\n",
                            25e10 /
                            (
+#if defined (__GNUC__)
                             powf(M_PI, 2.0) * atof(argv[2]) *
                             powf(atof(argv[1]), 2.0)
+#else
+                            pow(M_PI, 2.0) * atof(argv[2]) *
+                            pow(atof(argv[1]), 2.0)
+#endif
                            )
                );
 
@@ -39,9 +44,9 @@ int tanklc (int argc, char **argv)
               "    7406.51... (pF), giving the value for his capacitor.\n"
               "  We can then do \' # "PROGNAME" 300 7406.519\' and get back the first one\n"
               "    inductor value of 38 ("MUSYM"H)  (Actual get \'37.999998842\' (it might vary a\n"
-              "    little on the different platforms)  He is very close!)\n",
+              "    little on the different platforms)  He is very close!)\n"
+              "\n",
               stderr);
-        putc('\n', stderr);
         return(EXIT_FAILURE);
     }
     return (EXIT_SUCCESS);

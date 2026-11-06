@@ -58,13 +58,11 @@ nib(int argc, char ** argv)
               "\n"
               "  Usage: "PROGNAME" [some number]\n"
               "\n"
-              "  Example:  $ "PROGNAME" 11477\n"
+              "  Example:  # "PROGNAME" 11477\n"
               "\n"
-              "  Output should be: 11.21K\n",
+              "  Output should be: 11.21K\n"
+              "\n",
               stderr);
-#if defined (__GNUC__)
-        putc('\n', stderr);
-#endif
         return(EXIT_FAILURE);
     }
     return(EXIT_SUCCESS);  /* some cc generate warning without it */

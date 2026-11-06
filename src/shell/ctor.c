@@ -7,6 +7,7 @@
 #define PROGNAME    "ctor"
 
 #include "ctor.h"
+#include "define.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -26,12 +27,10 @@ ctor_usage()
          "\n"
          "  Usage: "PROGNAME" [outer diameter in mm]\n"
          "\n"
-         "  Example:  $ "PROGNAME" 500\n"
-         "  Output should be: 21.901 pF, 145.450 mm\n",
+         "  Example:  # "PROGNAME" 500\n"
+         "  Output should be: 21.901 pF, 145.450 mm\n"
+         "\n",
          stderr);
-#if defined (__GNUC__)
-        putc('\n', stderr);
-#endif
     return;
 }
 
@@ -56,7 +55,7 @@ ctor(int argc, char *argv[])
         C = (a * 1.2781 - a * X) * RXMX2;
 
         printf("C  = %.3f pF\n"
-               "d\u2082 = %.3f mm\n", C, d_2);
+               "d"SUB2" = %.3f mm\n", C, d_2);
     }else
     {
         ctor_usage();

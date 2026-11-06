@@ -3,11 +3,7 @@
  *   Project Crew 2024
  */
 
-#if defined (__WATCOMC__)
-#define PROGNAME "gainmarg"
-#elif defined (__GNUC__)
 #define PROGNAME "gainmargin"
-#endif
 
 #include <math.h>
 
@@ -44,7 +40,7 @@ int gainmargin (int argc, char **argv)
                 powl((atoll(argv[1]) + atoll(argv[2])) * 1e-12, 2)
             );
 #endif
-        return (0);
+        return (EXIT_SUCCESS);
     }
     else
     {
@@ -53,12 +49,10 @@ int gainmargin (int argc, char **argv)
               "  output is g"SUBM"crit in mA/V\n"
               "\n"
               "  Usage: "PROGNAME" shunt_pF load_pF ESR MHz\n"
-              "  Example:  $ "PROGNAME" 5.0 12.0 150.0 12.0\n"
-              "  Output should be: 0.98576mA/V\n",
+              "  Example:  # "PROGNAME" 5.0 12.0 150.0 12.0\n"
+              "  Output should be: 0.98576mA/V\n"
+              "\n",
               stderr);
-#if defined (__GNUC__)
-        putc('\n', stderr);
-#endif
         return (EXIT_FAILURE);
     }
 }

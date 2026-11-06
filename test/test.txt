@@ -1,0 +1,42 @@
+bclod 10.000 1.7 10.0
+boost test
+bucks test
+clod 7.105 2.2 1.1 5.0
+dilu
+12
+1000
+5
+ctor 500
+dist 32.715 -117.1625  34.69 135.502
+elcut 28.33 25.55 2516
+gainmargin 5.0 12.0 150.0 12.0
+hae4guys 16 42
+haeguys 16 45
+hb 32.715 -117.1625  34.69 135.502
+joules 33 330
+lpda 150 300 5
+moxon 146 5
+nib 11477
+pinh 413.000 0.95
+pinh -l 568.000 3.3705
+rcfilt 15000 0.01
+rcfilt 1061.33 15000
+salkey 1000.0 0.01
+simp
+1/2/3
+simp
+
+simp
+0
+simp
+1/2
+simp
+12/20
+tankfreq 3.3 0.86207
+tanklc 300.000 38
+tanklc 300 7406.519
+valfind 4.2 1500
+zipz 35.5 1.25 1.0
+zipz -r 456.8 0.05 1.2
+zout 10000 1000 4.6 4.4
+exit

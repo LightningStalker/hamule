@@ -66,9 +66,15 @@ boost(int argc, char ** argv){
         D4 = (1.0 - vinmax / voutmax);
         L4 = D4 * vinmax * (1.0 - D4) / (freq * 2.0 * iout);
 
+#if defined (__GNUC__)
         L = MAX(L, L2); // > out of 4
         L = MAX(L, L3);
         L = MAX(L, L4);
+#elif defined (__WATCOMC__)
+        L = max(L, L2); // > out of 4
+        L = max(L, L3);
+        L = max(L, L4);
+#endif
 
         Ipk = vinmin * D1 / (freq * L);
         // for vinmin and voutmax
@@ -78,9 +84,15 @@ boost(int argc, char ** argv){
         // for vinmax and coutmax
         Ipk4 = vinmax * D4 / (freq * L);
 
+#if defined (__GNUC__)
         Ipk = MAX(Ipk, Ipk2);
         Ipk = MAX(Ipk, Ipk3);
         Ipk = MAX(Ipk, Ipk4);
+#elif defined (__WATCOMC__)
+        Ipk = max(Ipk, Ipk2);
+        Ipk = max(Ipk, Ipk3);
+        Ipk = max(Ipk, Ipk4);
+#endif
 
         // Find the minimum capacitor Cap &gt; Iout / (Vripple * freq)
         cap = iout / (vripple * freq);
@@ -89,7 +101,7 @@ boost(int argc, char ** argv){
         L = L * 1e6;
 
 
-        printf("%'d\n%'d\n%'.3f\n%'.3f\n%'.3f\n%'.3f\n",
+        printf("%d\n%d\n%.3f\n%.3f\n%.3f\n%.3f\n",
                minduty,
                maxduty,
                L,
@@ -107,10 +119,8 @@ boost(int argc, char ** argv){
               "\n"
               "  Input: frequency, Vinmin, Vinmax, Voutmin, Voutmax, Iout, Vripple\n"
               "  Output: minduty, maxduty, L("MUSYM"H), Ipeak, capacitance("MUSYM"F), Voutmax\n"
-              , stderr);
-#if defined (__GNUC__)
-        putc('\n', stderr);
-#endif
+              "\n",
+              stderr);
         return(EXIT_FAILURE);
     }
 } /* main */

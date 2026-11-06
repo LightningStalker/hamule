@@ -12,6 +12,7 @@
 #define LESYM   "\xf3"    // <=
 #define MUSYM   "\x00e6"  // u
 #define OMEGA   "\xea"    // ohm
+#define SUB2    "_2"      // subscript 2
 #define SUBM    "(m)"     // subscript m
 #define TAU     "\xe7"    // t
 #else
@@ -19,6 +20,7 @@
 #define LESYM   "\u2266"
 #define MUSYM   "\u00b5"
 #define OMEGA   "\u2126"
+#define SUB2    "\u2082"
 #define SUBM    "\u2098"
 #define TAU     "\03c4"
 #endif

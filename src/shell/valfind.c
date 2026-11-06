@@ -30,12 +30,10 @@ int valfind (int argc, char **argv)
               "  Where Vout is the desired output voltage and\n"
               "  R2 is the desired resistance of R2.\n"
               "\n"
-              "  Example:  $ "PROGNAME" 4.2 1500\n"
-              "  Output should be 669.643"OMEGA"\n",
+              "  Example:  # "PROGNAME" 4.2 1500\n"
+              "  Output should be 669.643"OMEGA"\n"
+              "\n",
               stderr);
-#if defined (__GNUC__)
-        putc('\n', stderr);
-#endif
         return(EXIT_FAILURE);
     }
 

@@ -163,7 +163,7 @@ moxon(int argc, char ** argv)
               "\n"
               "  Usage: "PROGNAME" [f.MHz] [elements diameter]\n"
               "\n"
-              "  Example:  $ "PROGNAME" 146 5\n"
+              "  Example:  # "PROGNAME" 146 5\n"
               "\n"
               "  Output should be:\n"
               "  A = 0.35902\n"
@@ -172,11 +172,9 @@ moxon(int argc, char ** argv)
               "  D = 0.06917\n"
               "  E = 0.13348\n"
               "\n"
-              "  (https://www.moxonantennaproject.net/design.htm)\n",
+              "  (https://www.moxonantennaproject.net/design.htm)\n"
+              "\n",
               stderr);
-#if defined (__GNUC__)
-        putc('\n', stderr);
-#endif
         return (EXIT_FAILURE);
     }
 }

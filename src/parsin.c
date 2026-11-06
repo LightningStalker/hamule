@@ -25,7 +25,7 @@ strtoargs(char *commandLine[], ssize_t *len)
     int acnt = 0;
 
     *(*commandLine + *len - 1) = 0;          /* line feed char is a 0 */
-    
+
     char *p2 = strtok(*commandLine, " ");    /* hey sstteevvee        */
     while (p2 && acnt < kMaxArgs-1)
     {

@@ -11,24 +11,24 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <ctype.h>
-
+#if defined (__DOS__)
+#include <i86.h>
+#endif
 
 void
 bucks_usage()
 {
     fputs("\n"
-          "   "PROGNAME" is a buck converter power state calculator.\n"
-          "   5 output paramaters including inductor value\n"
+          "  "PROGNAME" is a buck converter power state calculator.\n"
+          "  5 output paramaters including inductor value\n"
           "\n"
-          "   5 position dependent input paramaters from stdin, 1 per line\n"
-          "   scriptable and designed to be used with formvar\n"
-          "   Input: frequency, Vin, Vout, Ioutmax, Voutripple\n"
-          "   Output: dutyCycle, Iripple, L("MUSYM"H), "
-          "minimumOutputCapacitance("MUSYM"F), Idiode\n",
+          "  5 position dependent input paramaters from stdin, 1 per line\n"
+          "  scriptable and designed to be used with formvar\n"
+          "  Input: frequency, Vin, Vout, Ioutmax, Voutripple\n"
+          "  Output: dutyCycle, Iripple, L("MUSYM"H), "
+          "minimumOutputCapacitance("MUSYM"F), Idiode\n"
+          "\n",
           stderr);
-#if defined (__GNUC__)
-    putc('\n', stderr);
-#endif
     return;
 }
 
@@ -60,7 +60,10 @@ bucks(int argc, char ** argv)
         if(fgets(strg, 40, stdin) == NULL) // process input
             bucks_usage();     // NO_VALUE
         else if ((isdigit(strg[0]) == 0) && (strg[0] != '.'))
+        {
             bucks_usage();
+            return(EXIT_FAILURE);
+        }
         freq           = atof(strg);
         fputs("           input voltage? ", stderr);
 #if defined (__DOS__)
@@ -132,6 +135,7 @@ bucks(int argc, char ** argv)
     }else
     {
         bucks_usage();
+        return(EXIT_FAILURE);
     }
     return(EXIT_SUCCESS);
 } /* main */

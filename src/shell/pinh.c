@@ -47,9 +47,9 @@ pinh(int argc, char ** argv)
               "\n"
               "  If you discover a hole, -l will give its focal length in meters\n"
               "  Like so:  # "PROGNAME" -l 568.000 3.3705\n"
-              "  Output should be: 5.000m\n",
+              "  Output should be: 5.000m\n"
+              "\n",
               stderr);
-        putc('\n', stderr);
         return (EXIT_FAILURE);
     }
     return(EXIT_FAILURE);

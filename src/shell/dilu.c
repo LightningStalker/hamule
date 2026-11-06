@@ -43,14 +43,11 @@ dilu (int argc, char * argv[])
     printf("Initial %% concentration........: ");
     cInit = getfl();
     if(cInit > 100) err100();
-    else if(cInit == 0) return(EXIT_SUCCESS);
     printf("Start volume or volume to fill.: ");
     vDis  = getfl();
-    if(vDis == 0) return(EXIT_SUCCESS);
     printf("Target  %% concentration........: ");
     cTarg = getfl();
     if(cTarg > 100) err100();
-    else if(cTarg == 0) return(EXIT_SUCCESS);
 
     /* "Math" */
     if(cInit >= cTarg)

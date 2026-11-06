@@ -57,7 +57,11 @@ simp (int argc, char * argv[])
         {
             if(isdigit(strg[t])) {}     /* it has to be the # or '/' */
             else if(strg[t] == '/') slashcnt++;
-            else simp_usage();
+            else
+            {
+                simp_usage();
+                return(EXIT_FAILURE);
+            }
         }
         if(slashcnt != 1)
         {

@@ -14,7 +14,7 @@ tankfreq(int argc, char ** argv)
 {
     if (argc == 3)
     {
-        printf("%'.3f\n",
+        printf("%.3f\n",
                      1 /
                      (
                       2 * M_PI * sqrt( atof(argv[1]) * atof(argv[2]) )
@@ -28,10 +28,10 @@ tankfreq(int argc, char ** argv)
               "\n"
               "  Usage: "PROGNAME" [microfarads] [microhenries]\n"
               "\n"
-              "  Example:  $ "PROGNAME" 3.3 0.86207\n"
-              "  Output should be: 94,360.861\n",
+              "  Example:  # "PROGNAME" 3.3 0.86207\n"
+              "  Output should be: 94360.861\n"
+              "\n",
               stderr);
-        putc('\n', stderr);
         return (EXIT_FAILURE);
     }
     return (EXIT_FAILURE); /* makes tc happy */

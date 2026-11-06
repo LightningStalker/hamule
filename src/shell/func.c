@@ -1,6 +1,6 @@
 /* common function
  * Project Crew™ 10/14/2026
- * 
+ *
  * gcf() source - https://stackoverflow.com/a/44670823
  * Posted by Bill Tarbell
  * Retrieved 2026-09-18, License - CC BY-SA 3.0
@@ -34,7 +34,6 @@ errdec()
 float
 getfl()
 {
-    static const short int crlf = sizeof "\n";
     char strg[40];
     int len;
     short int t, dotcnt = 0;
@@ -44,7 +43,7 @@ getfl()
         sExit();                /* NO_VALUE */
         return 0;
     }
-    len = (int)strlen(strg) - crlf;
+    len = (int)strlen(strg) - 2;
     if(len >= 0)
     {
         for(t = 0, dotcnt = 0; t <= len; t++)
@@ -56,7 +55,7 @@ getfl()
         }
         if(dotcnt > 1) errdec();
     }else sExit();
-    return 0;
+    return strtod(strg, NULL);
 }
 
 long

@@ -42,13 +42,13 @@ int seriesw (int argc, char **argv)
               "  R2 = Potentiometer Maximum Resistance\n"
               "  V  = Appied Voltage\n"
               "  Example:  # "PROGNAME" 4.7 50 1.25\n"
-              "  Output should end with: R1 peaked at 0.3324W, R2 peaked at 0.0831W\n",
+              "  Output should end with: R1 peaked at 0.3324W, R2 peaked at 0.0831W\n"
+              "\n",
               stderr);
-        putc('\n', stderr);
-        return(1);
+        return(EXIT_FAILURE);
     }
 
-    return(0);
+    return(EXIT_SUCCESS);
 }
 
 #undef  PROGNAME

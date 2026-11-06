@@ -49,7 +49,7 @@ int clod (int argc, char **argv)
         L = 1e6 / (68 * (M_PI * M_PI) * (f * f)) * den4;
         // Things may get a little weird if the coil is too close to the end.
         printf ("%.3f"MUSYM"H\n", L);
-        return (0);
+        return (EXIT_SUCCESS);
     }
     else
     {
@@ -58,13 +58,11 @@ int clod (int argc, char **argv)
               "  output is coil inductance in microhenries\n"
               "\n"
               "  Usage: "PROGNAME" frequency(MHz) whip_length(m) coil_position(m) whip_diameter(mm)\n"
-              "  Example:  $ "PROGNAME" 7.105 2.2 1.1 5.0\n"
-              "  Output should be: 39.606"MUSYM"H\n",
+              "  Example:  # "PROGNAME" 7.105 2.2 1.1 5.0\n"
+              "  Output should be: 39.606"MUSYM"H\n"
+              "\n",
               stderr);
-#if defined (__GNUC__)
-        putc('\n', stderr);
-#endif
-        return (1);
+        return (EXIT_FAILURE);
     }
 }
 

@@ -42,7 +42,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include <string.h>
+
+#if !__USE_POSIX
+#include "getline.h"
+#endif
 
 #define LF  10
 
@@ -58,10 +63,11 @@ int
 strtoargs(char *commandLine[], ssize_t *len)
 {
     int acnt = 0;
+    char *p2;
 
     *(*commandLine + *len - 1) = 0;          /* line feed char is a 0 */
 
-    char *p2 = strtok(*commandLine, " ");    /* hey sstteevvee        */
+    p2 = strtok(*commandLine, " ");         /* hey sstteevvee        */
     while (p2 && acnt < kMaxArgs-1)
     {
         avec[acnt++] = p2;
@@ -89,7 +95,7 @@ showhelp()
     {
         printf("%-20s", calcs[t].name);
     }
-    puts("\n  * not all are include yet this shell version of the hamule.");
+    puts("\n");
 }
 
 
@@ -222,7 +228,7 @@ main(int argc, char *argv[])
                               exit(EXIT_SUCCESS);
                               break;
 
-                    default : printf("calc [%s] not done yet\n", res->name);
+                    default : printf("function [%s] not implemented\n", res->name);
                 }
             }else
             {
@@ -234,5 +240,5 @@ main(int argc, char *argv[])
     }
     puts("\nexit");
     free(strg);
-    exit(EXIT_SUCCESS);
+    return(EXIT_SUCCESS);
 }

@@ -56,6 +56,7 @@ dkms.conf
 *.dvi
 *.log
 *.pdf
+*.err
 bclod
 bias
 boost
@@ -71,6 +72,7 @@ gainmargin
 hae4guys
 haeguys
 hamule
+HAMULE.EXE
 hb
 joules
 lpda
@@ -89,3 +91,5 @@ valfind
 volavg
 zipz
 zout
+test/result.txt
+test/DOSRESLT.TXT

@@ -1,0 +1,89 @@
+
+  boost is a boost converter calculator.
+  6 output paramaters including inductor value
+
+  7 position dependent input paramaters from stdin, 1 per line
+
+  Input: frequency, Vinmin, Vinmax, Voutmin, Voutmax, Iout, Vripple
+  Output: minduty, maxduty, L(µH), Ipeak, capacitance(µF), Voutmax
+
+
+  bucks is a buck converter power state calculator.
+  5 output paramaters including inductor value
+
+  5 position dependent input paramaters from stdin, 1 per line
+  scriptable and designed to be used with formvar
+  Input: frequency, Vin, Vout, Ioutmax, Voutripple
+  Output: dutyCycle, Iripple, L(µH), minimumOutputCapacitance(µF), Idiode
+
+hamule v0.01
+Type `?` to get help.
+# 12.237µH
+# # # 39.606µH
+# Initial % concentration........: Start volume or volume to fill.: Target  % concentration........: 
+Target dilution ratio: 1:19
+Add 1400.00 diluent to 1000.00 units of 12.00%
+  to get 2400.00 dilute of 5.00%
+Or add 416.67 of 12.00% solution and 583.33 diluent
+  to get the 1000.00 units at 5.00% concentration
+# C  = 21.901 pF
+d₂ = 145.450 mm
+# 9360.033
+# 246.893046
+# 0.98576mA/V
+# 23.912  (length of each guy wire) total (x4) = 95.646
+17.770  (distance of guying stakes from center)
+25.130  (distance between corners)
+# 22.627  (length of each guy wire) total (x3) = 67.882
+16.000  (distance of guying stakes from center)
+27.713  (distance between corners)
+# 307.9111
+# 1.797
+# 
+  scaling factor c4 = 0.840896
+  boom length      = 199.9cm
+
+      length   spacing
+  ______________________
+  LL   50.0     0
+  L2   42.0     63.6
+  L3   35.3     53.5
+  L4   29.7     45.0
+  L5   25.0     37.8
+
+# 
+  using freq:    146.000 MHz              wire diameter:    5.0mm
+  wavelength:      2.05m       wire diam. in wavelengths:    0.002435
+  ____________________________________________________________________
+  in wavelengths    in centimeters
+   A = 0.35902          73.72cm
+   B = 0.04685           9.62cm
+   C = 0.01746           3.58cm
+   D = 0.06917          14.20cm
+   E = 0.13348          27.41cm
+
+# 11.21K
+# 1.253mm
+# 5.000m
+# 1,061.032954
+# 0.009997
+# 15,915
+# Enter a fraction (n/d): 
+You can't do that!  It's gotta be 2 positive integers separated by a forward
+slash.
+# Enter a fraction (n/d): 
+
+No input, exiting...
+# Enter a fraction (n/d): 
+You can't do that!  It's gotta be 2 positive integers separated by a forward
+slash.
+# Enter a fraction (n/d): It's already simplified.
+# Enter a fraction (n/d): Simplification........: 3/5
+# 94360.861
+# 7406.518774334
+# 37.999998842
+# R1 shall be 669.643Ω
+# 401.1
+# 3.2510
+# 50.761421
+# 

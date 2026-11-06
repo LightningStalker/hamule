@@ -22,7 +22,7 @@ int joules (int argc, char **argv)
         printf ("%.3f\n", 5e-7 * atof(argv[1]) * \
             powf(atof(argv[2]), 2));
 #endif
-        return (0);
+        return (EXIT_SUCCESS);
     }
     else
     {
@@ -32,10 +32,10 @@ int joules (int argc, char **argv)
               "\n"
               "  Usage: "PROGNAME" microfarads volts\n"
               "  Example:  # "PROGNAME" 33 330\n"
-              "  Output should be: 1.797\n",
+              "  Output should be: 1.797\n"
+              "\n",
               stderr);
-        putc('\n', stderr);
-        return (1);
+        return (EXIT_FAILURE);
     }
 }
 

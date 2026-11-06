@@ -161,6 +161,12 @@ zout: zout.c
 shell:
 	cd src/shell && $(MAKE)
 
+dos:
+	cd src/shell && $(MAKE) $@
+
+test::
+	cd src/shell && $(MAKE) $@
+
 
 install:
 	$(FIND) $(FINDOPT) | $(XARGS) $(XARGSOPT) $(INSTALL) \
@@ -198,6 +204,7 @@ clean:
 	$(RM) volavg
 	$(RM) zipz
 	$(RM) zout
-	cd src/shell && $(MAKE)
+	cd src/shell && $(MAKE) $@
 
 distclean: clean
+	cd src/shell && $(MAKE) $@

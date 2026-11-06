@@ -57,13 +57,11 @@ hae4guys(int argc, char ** argv)
               "\n"
               "  Usage: "PROGNAME" [height of mast hold point] [desired angle in degrees]\n"
               "\n"
-              "  Example:  $ "PROGNAME" 16 42\n"
+              "  Example:  # "PROGNAME" 16 42\n"
               "\n"
-              "  Output should be: 23.912, 17.770, and 25.130\n",
+              "  Output should be: 23.912, 17.770, and 25.130\n"
+              "\n",
               stderr);
-#if defined (__GNUC__)
-        putc('\n', stderr);
-#endif
         return(EXIT_FAILURE);
     }
     return(EXIT_SUCCESS);  /* some cc generate warning without it */

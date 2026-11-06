@@ -11,7 +11,7 @@ int elcut (int argc, char **argv)
     if (argc == 4)
     {
         printf ("%f\n", (atof(argv[1]) - atof(argv[2])) / atof(argv[1]) * atof(argv[3]));
-        return (0);
+        return (EXIT_SUCCESS);
     }
     else
     {
@@ -23,13 +23,11 @@ int elcut (int argc, char **argv)
               "  remember the output is theoretical and subtract from it to avoid mistuning.\n"
               "\n"
               "  Usage: "PROGNAME" freq_desired freq_current length_current\n"
-              "  Example:  $ "PROGNAME" 28.33 25.55 2516\n"
-              "  Output should be: 246.893046\n",
+              "  Example:  # "PROGNAME" 28.33 25.55 2516\n"
+              "  Output should be: 246.893046\n"
+              "\n",
               stderr);
-#if defined (__GNUC__)
-        putc('\n', stderr);
-#endif
-        return (1);
+        return (EXIT_FAILURE);
     }
 }
 

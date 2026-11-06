@@ -66,14 +66,12 @@ salkey(int argc, char ** argv)
               "\n"
               "  Usage: "PROGNAME" [R] [C] (microfarads)\n"
               "\n"
-              "  Example:  $ "PROGNAME" 1000.0 0.01\n"
-              "  Output should be: 15,915\n"
+              "  Example:  # "PROGNAME" 1000.0 0.01\n"
+              "  Output should be: 15915\n"
               "\n"
-              "  (https://en.wikipedia.org/wiki/Sallen–Key_topology)\n",
+              "  (https://en.wikipedia.org/wiki/Sallen–Key_topology)\n"
+              "\n",
               stderr);
-#if defined (__GNUC__)
-        putc('\n', stderr);
-#endif
         return (EXIT_FAILURE);
     }
 }

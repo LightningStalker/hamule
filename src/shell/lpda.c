@@ -107,7 +107,7 @@ lpda(int argc, char ** argv)
               "\n"
               "  Usage: "PROGNAME" [fLow] [fHigh] [NumElements]\n"
               "\n"
-              "  Example:  $ "PROGNAME" 150 300 5\n"
+              "  Example:  # "PROGNAME" 150 300 5\n"
               "\n"
               "  Output should be:\n"
               "  LL   50.0     0\n"
@@ -116,11 +116,9 @@ lpda(int argc, char ** argv)
               "  L4   29.7     45.0\n"
               "  L5   25.0     37.8\n"
               "\n"
-              "  (https://en.wikipedia.org/wiki/Log-periodic_antenna)\n",
+              "  (https://en.wikipedia.org/wiki/Log-periodic_antenna)\n"
+              "\n",
               stderr);
-#if defined (__GNUC__)
-        putc('\n', stderr);
-#endif
     }
     return (EXIT_FAILURE);
 }

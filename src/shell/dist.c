@@ -97,13 +97,11 @@ dist(int argc, char ** argv)
               "\n"
               "  Usage: "PROGNAME" [latitude A"DEGSYM"] [longitude A"DEGSYM"] [lat. B"DEGSYM"] [long. B"DEGSYM"]\n"
               "\n"
-              "  Example:  $ "PROGNAME" 32.715 -117.1625  34.69 135.502  (San Diego, US - Osaka, JP)\n"
+              "  Example:  # "PROGNAME" 32.715 -117.1625  34.69 135.502  (San Diego, US - Osaka, JP)\n"
               "\n"
-              "  Output should be: 9360.033 (km)\n",
+              "  Output should be: 9360.033 (km)\n"
+              "\n",
               stderr);
-#if defined (__GNUC__)
-        putc('\n', stderr);
-#endif
         return (EXIT_FAILURE);
     }
 }
