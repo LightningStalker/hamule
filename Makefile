@@ -161,6 +161,7 @@ zout: zout.c
 shell:
 	cd src/shell && $(MAKE)
 
+# Watcom
 dos:
 	cd src/shell && $(MAKE) $@
 
@@ -172,8 +173,10 @@ install:
 	$(FIND) $(FINDOPT) | $(XARGS) $(XARGSOPT) $(INSTALL) \
 	$(INSTALLOPT) {} $(PREFIX)/bin
 
-
 clean:
+	cd src/shell && $(MAKE) $@
+
+distclean: clean
 #	$(RM) bias
 	$(RM) bclod
 	$(RM) boost
@@ -204,7 +207,4 @@ clean:
 	$(RM) volavg
 	$(RM) zipz
 	$(RM) zout
-	cd src/shell && $(MAKE) $@
-
-distclean: clean
 	cd src/shell && $(MAKE) $@

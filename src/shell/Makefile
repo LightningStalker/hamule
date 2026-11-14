@@ -59,6 +59,7 @@ all: $(TARGETDIR)$(TARGET)
 
 dos: $(TARGETDIR)$(TARGET_EXE)
 
+# GNU
 $(TARGETDIR)$(TARGET): CC     := gcc
 $(TARGETDIR)$(TARGET): CFLAGS := -Os
 $(TARGETDIR)$(TARGET): $(OBJECTS)
@@ -67,6 +68,7 @@ $(TARGETDIR)$(TARGET): $(OBJECTS)
 	$(STRIP) -s $@
 	$(LS) $@
 
+# Watcom
 $(TARGETDIR)$(TARGET_EXE): CC     := $(ENV) wcl
 $(TARGETDIR)$(TARGET_EXE): CFLAGS := -bt=dos -q -wx
 $(TARGETDIR)$(TARGET_EXE): OUTPUT_OPTION :=

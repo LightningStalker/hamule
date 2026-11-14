@@ -29,7 +29,7 @@ haeguys(int argc, char ** argv)
                    circumscribedCircle = sqrt(pow(guyl, 2) - pow(height, 2)),
                    /* Lside */
                    side                = circumscribedCircle * sqrt(3);
-#elif defined (__GNUC__)
+#else
             double height              = atof(argv[1]),
                    /* convert to radians */
                    angle               = M_PI * atof(argv[2]) / 180.0,

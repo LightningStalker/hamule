@@ -30,7 +30,7 @@ hae4guys(int argc, char ** argv)
                    circumscribedCircle = sqrt(pow(guyl, 2) - pow(height, 2)),
                    /* ... again */
                    side                = sqrt(2) * circumscribedCircle;
-#elif defined (__GNUC__)
+#else
             double height              = atof(argv[1]),
                    /* convert to radians */
                    angle               = M_PI * atof(argv[2]) / 180.0,
@@ -40,13 +40,12 @@ hae4guys(int argc, char ** argv)
                    circumscribedCircle = sqrtf(powf(guyl, 2.0) - powf(height, 2.0)),
                    /* ... again */
                    side                = M_SQRT2 * circumscribedCircle;
-#endif
 
             printf("%.3f  (length of each guy wire) total (x4) = %.3f\n", guyl, guyl * 4);
             printf("%.3f  (distance of guying stakes from center)\n",
                    circumscribedCircle);
             printf("%.3f  (distance between corners)\n", side);
-
+#endif
             return(EXIT_SUCCESS);
         }
     }else  /* print usage */

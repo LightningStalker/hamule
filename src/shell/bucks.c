@@ -9,7 +9,9 @@
 #include "define.h"
 #include <stdio.h>
 #include <stdlib.h>
+#if !defined (__VBCC__)
 #include <unistd.h>
+#endif
 #include <ctype.h>
 #if defined (__DOS__)
 #include <i86.h>

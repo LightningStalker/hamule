@@ -9,7 +9,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#if !defined (__VBCC__)
 #include <unistd.h>
+#endif
 #if defined (__GNUC__)
 #include <locale.h>
 #endif

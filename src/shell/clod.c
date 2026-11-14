@@ -30,7 +30,7 @@ int clod (int argc, char **argv)
 #if defined (__WATCOMC__)
         den1 = log(24 * ((234 / f) - D) / d) - 1;
         den2 = pow(1 - (f * D / 234), 2) - 1;
-#elif defined (__GNUC__)
+#else
         den1 = logf(24 * ((234 / f) - D) / d) - 1;
         den2 = powf(1 - (f * D / 234), 2) - 1;
 #endif
@@ -39,7 +39,7 @@ int clod (int argc, char **argv)
 #if defined (__WATCOMC__)
         den1 = log(24 * (l - D) / d) - 1; // Japanese intermediate variables?
         den2 = pow((((f * l) - f * D) / 234), 2) - 1;
-#elif defined (__GNUC__)
+#else
         den1 = logf(24 * (l - D) / d) - 1; // Japanese intermediate variables?
         den2 = powf((((f * l) - f * D) / 234), 2) - 1;
 #endif

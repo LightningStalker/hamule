@@ -1,6 +1,12 @@
 #if !defined M_PI
 #ifndef M_PI
-#define M_PI		3.14159265358979323846	/* pi */
+#define M_PI        3.14159265358979323846	/* pi */
+#endif
+#endif
+
+#if !defined M_SQRT2
+#ifndef M_SQRT2
+#define M_SQRT2     1.41421356237309504880	/* sqrt(2) */
 #endif
 #endif
 
@@ -15,6 +21,14 @@
 #define SUB2    "_2"      // subscript 2
 #define SUBM    "(m)"     // subscript m
 #define TAU     "\xe7"    // t
+#elif defined (__VBCC__)
+#define DEGSYM  "degrees"
+#define LESYM   "<="
+#define MUSYM   "u"
+#define OMEGA   "OHM"
+#define SUB2    "_2"
+#define SUBM    "(m)"
+#define TAU     "tau"
 #else
 #define DEGSYM  "\u00b0"                     /* differences of the codepage */
 #define LESYM   "\u2266"

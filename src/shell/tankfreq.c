@@ -4,6 +4,7 @@
 #define PROGNAME    "tankfreq"
 
 #include "tankfreq.h"
+#include "define.h"
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
